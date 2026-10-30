@@ -1,0 +1,10 @@
+<!-- Компонент: hobby-card — карточка «Ваши увлечения». Параметры: href, theme, tag, title, shape (фигура на фоне), date (необязательно), class.
+     title выводится тремя скобками — в нём можно переносить строки через br -->
+<a class="hobby-card hobby-card--{{theme}} {{class}}" href="{{href}}">
+  <img class="hobby-card__shape" src="{{shape}}" alt="">
+  <div class="hobby-card__body">
+    <span class="hobby-card__tag">{{tag}}</span>
+    <h3 class="hobby-card__title">{{{title}}}</h3>
+    {{#if date}}<time class="hobby-card__date">{{date}}</time>{{/if}}
+  </div>
+</a>

@@ -1,0 +1,120 @@
+@use '../../styles/variables' as *;
+
+// Блок: hobbies — «Ваши увлечения в Парках Москвы»
+.hobbies {
+    padding: 100px 0 20px;
+    background-color: $color-line;
+}
+
+// Раскладка через области грида: заголовок и две стрелки в первой строке,
+// слайдер — второй строкой на всю ширину
+.container-hobbies {
+    display: grid;
+    grid-template-areas:
+        'title  prev   next'
+        'slider slider slider';
+    grid-template-columns: 1fr auto auto;
+    align-items: end;
+    gap: 32px 16px;
+}
+
+.hobbies__title {
+    grid-area: title;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 82px;
+}
+
+.hobbies__prev {
+    grid-area: prev;
+    margin-bottom: 6px;
+}
+
+.hobbies__next {
+    grid-area: next;
+    margin-bottom: 6px;
+}
+
+.hobbies__slider {
+    grid-area: slider;
+    width: 100%;
+
+    // Цвет плашки и положение фигуры — по модификатору карточки, а не по порядку:
+    // в бесконечном режиме Swiper переставляет слайды в DOM, и nth-child перепутал бы их.
+    // Размеры, сдвиги и углы — из макета: фигура повёрнута вокруг своего центра (transform-origin)
+    .hobby-card {
+        &--kids {
+            --card-color: #1eb9cb;
+
+            .hobby-card__shape {
+                top: -154px;
+                left: -172px;
+                width: 677px;
+                height: 943px;
+                transform-origin: 353px 474px;
+                transform: rotate(90deg);
+            }
+        }
+
+        &--sport {
+            --card-color: #{$color-primary};
+
+            .hobby-card__shape {
+                top: -496px;
+                left: -459px;
+                width: 1491px;
+                height: 1418px;
+                transform-origin: 745px 702px;
+                transform: rotate(45deg);
+            }
+        }
+
+        &--rest {
+            --card-color: #ff871c;
+
+            .hobby-card__shape {
+                top: -244px;
+                left: -212px;
+                width: 677px;
+                height: 943px;
+                transform-origin: 353px 474px;
+                transform: rotate(-90deg);
+            }
+        }
+
+        &--sights {
+            --card-color: #b18ff8;
+
+            .hobby-card__shape {
+                top: -376px;
+                left: -529px;
+                width: 1491px;
+                height: 1418px;
+                transform-origin: 745px 702px;
+                transform: rotate(-150deg);
+            }
+        }
+
+        &--podcast {
+            --card-color: #ee362a;
+
+            .hobby-card__shape {
+                top: -73px;
+                left: 50px;
+                width: 604px;
+                height: 552px;
+            }
+        }
+
+        &--gallery {
+            --card-color: #7ec730;
+
+            .hobby-card__shape {
+                top: -73px;
+                left: -362px;
+                width: 604px;
+                height: 552px;
+            }
+        }
+    }
+}

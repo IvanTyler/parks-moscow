@@ -1,0 +1,61 @@
+// Компонент: button — общие кнопки сайта, вид задаётся модификаторами
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 24px 18px;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    transition: background-color 0.2s;
+
+    // Стеклянная: полупрозрачная белая подложка с размытием — для кнопок поверх фото
+    &--glass {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    // Светлая: белый круг с тёмной иконкой — для светлого фона
+    &--light {
+        color: #000;
+        background-color: #fff;
+
+        &:hover {
+            background-color: #f2f5f4;
+        }
+    }
+
+    // Неактивная стрелка слайдера (Swiper вешает этот класс на краях)
+    &.swiper-button-disabled {
+        opacity: 0.4;
+        cursor: default;
+    }
+
+    // Круглая кнопка с одной иконкой
+    &--icon {
+        padding: 16px;
+        border-radius: 100px;
+    }
+
+    // Стрелки слайдеров. Иконка — CSS-маска, а цвет берётся из color кнопки,
+    // поэтому один файл подходит и для белых, и для тёмных стрелок
+    &--prev::before,
+    &--next::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-color: currentColor;
+        mask: url('/src/assets/icons/hero/arrow-long-left.svg') center / 20px no-repeat;
+    }
+
+    &--next::before {
+        mask-image: url('/src/assets/icons/hero/arrow-long-right.svg');
+    }
+}

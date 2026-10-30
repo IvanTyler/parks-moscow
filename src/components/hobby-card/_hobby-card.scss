@@ -1,0 +1,54 @@
+@use '../../styles/variables' as *;
+
+// Компонент: hobby-card — цветная фигура на фоне и плашка с текстом снизу
+.hobby-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 402px;
+    height: 580px;
+    padding: 240px 80px 0 0;
+    overflow: hidden;
+    color: #fff;
+    background-color: $color-line;
+
+    // Фигура на фоне. Размер, сдвиг и поворот у каждой свои — их задаёт блок
+    &__shape {
+        position: absolute;
+        max-width: none;
+    }
+
+    // Плашка с текстом — поверх фигуры
+    &__body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        // Все плашки одной высоты — по самой высокой (с датой): 20 + 14 + 24 + 56 + 24 + 20 + 20
+        min-height: 178px;
+        padding: 20px;
+        background-color: var(--card-color, $color-primary);
+    }
+
+    &__tag {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        text-transform: uppercase;
+        opacity: 0.6;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+
+    &__date {
+        font-size: 16px;
+        line-height: 20px;
+        opacity: 0.6;
+    }
+
+}

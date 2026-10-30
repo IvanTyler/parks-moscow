@@ -1,0 +1,40 @@
+<!-- Блок: header -->
+<header class="header">
+  <div class="container container-header">
+    <!-- Верхняя строка: радио, подкасты, поиск, версия для слабовидящих -->
+    <div class="header-top">
+      <div class="header-top__media">
+        <button class="header-top__media-item" type="button">
+          <span class="header-top__play">
+            <img src="/src/assets/icons/header/play.svg" alt="" width="24" height="24">
+          </span>
+          Радио Парки
+        </button>
+        <button class="header-top__media-item" type="button">
+          <span class="header-top__play">
+            <img src="/src/assets/icons/header/play.svg" alt="" width="24" height="24">
+          </span>
+          Подкасты
+        </button>
+      </div>
+
+      <form class="header-top__search" role="search" action="#">
+        <label class="visually-hidden" for="header-search">Поиск по сайту</label>
+        <input class="header-top__search-input" id="header-search" type="search" name="q" placeholder="Поиск по сайту">
+      </form>
+      <button class="header-top__action" type="button">
+        <img src="/src/assets/icons/header/show.svg" alt="" width="24" height="24">
+        Версия для слабовидящих
+      </button>
+    </div>
+
+    <!-- Нижняя строка: логотип и меню -->
+    <div class="header-bottom">
+      <a class="header-bottom__logo" href="/" aria-label="Парки Москвы — на главную">
+        <img src="/src/assets/images/header/logo-parki-moskvy.svg" alt="Парки Москвы" width="147" height="36">
+      </a>
+      {{> nav}}
+    </div>
+
+  </div>
+</header>

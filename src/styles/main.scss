@@ -1,0 +1,23 @@
+// Общие стили
+@use 'fonts';
+@use 'reset';
+@use 'base';
+
+// Общие компоненты
+@use '../components/button/button';
+@use '../components/feature-card/feature-card';
+@use '../components/hobby-card/hobby-card';
+
+// Блоки — по одному файлу на блок
+@use '../components/header/header';
+@use '../components/nav/nav';
+@use '../components/hero/hero';
+@use '../components/interesting/interesting';
+@use '../components/hobbies/hobbies';
+@use '../components/events/events';
+@use '../components/map/map';
+@use '../components/news/news';
+@use '../components/journals/journals';
+@use '../components/about/about';
+@use '../components/partners/partners';
+@use '../components/footer/footer';

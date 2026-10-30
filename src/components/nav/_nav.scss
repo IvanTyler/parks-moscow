@@ -1,0 +1,31 @@
+@use '../../styles/variables' as *;
+
+// Компонент: nav — пункты в одну линию, поэтому flex
+.nav {
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 24px;
+        border-radius: 16px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        color: $color-black;
+        transition: background-color 0.2s;
+
+        // В макете у пункта с иконкой справа отступ на 2px меньше
+        &--icon {
+            padding-right: 22px;
+        }
+
+        &:hover {
+            background-color: $color-line;
+        }
+    }
+}

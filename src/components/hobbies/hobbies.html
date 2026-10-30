@@ -1,0 +1,25 @@
+<!-- Блок: hobbies — «Ваши увлечения в Парках Москвы» -->
+<section class="hobbies">
+  <div class="container container-hobbies">
+    <h2 class="hobbies__title">Ваши увлечения<br>в Парках Москвы</h2>
+    <button class="button button--light button--icon button--prev hobbies__prev" type="button" aria-label="Предыдущие карточки"></button>
+    <button class="button button--light button--icon button--next hobbies__next" type="button" aria-label="Следующие карточки"></button>
+
+    <div class="hobbies__slider swiper">
+      <div class="swiper-wrapper">
+        {{> hobby-card class="swiper-slide" href="#" theme="kids" shape="/src/assets/images/hobbies/shape-kids.svg" tag="Для детей"
+            title="Не только детские площадки"}}
+        {{> hobby-card class="swiper-slide" href="#" theme="sport" shape="/src/assets/images/hobbies/shape-sport.svg" tag="Для спорта"
+            title="А вы знали,<br>что у нас есть корты?"}}
+        {{> hobby-card class="swiper-slide" href="#" theme="rest" shape="/src/assets/images/hobbies/shape-rest.svg" tag="Для отдыха"
+            title="Пикники для компаний<br>или романтические прогулки"}}
+        {{> hobby-card class="swiper-slide" href="#" theme="sights" shape="/src/assets/images/hobbies/shape-sights.svg" tag="Достопримечательности"
+            title="Исторические дворцы, особняки, скульптуры<br>и храмы"}}
+        {{> hobby-card class="swiper-slide" href="#" theme="podcast" shape="/src/assets/images/hobbies/shape-podcast.svg" tag="Подкасты" date="8 октября 2026"
+            title="«Парк звучит»: истории природы и людей"}}
+        {{> hobby-card class="swiper-slide" href="#" theme="gallery" shape="/src/assets/images/hobbies/shape-gallery.svg" tag="Галерея" date="8 сентября 2026"
+            title="Цветущая Москва: парки в июне"}}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<!-- Блок: hero — слайдер на первом экране -->
+<section class="hero">
+  <div class="container container-hero">
+    <div class="hero__slider swiper">
+      <div class="swiper-wrapper">
+
+        <article class="hero__slide swiper-slide">
+          <img class="hero__image" src="/src/assets/images/hero/hero-poster.png" alt="" width="1920" height="1080">
+          <h1 class="hero__title">Новая<br>городская привычка</h1>
+          <p class="hero__text">Вместе создаем пространства для жизни,<br>вдохновения и общения</p>
+          {{> button text="Открыть осеннюю афишу" href="#" modifier="button--glass hero__button"}}
+        </article>
+
+        <article class="hero__slide swiper-slide">
+          <img class="hero__image" src="/src/assets/images/hero/hero-poster.png" alt="" width="1920" height="1080">
+          <h2 class="hero__title">Новая<br>городская привычка 2</h2>
+          <p class="hero__text">Вместе создаем пространства для жизни,<br>вдохновения и общения 2</p>
+          {{> button text="Открыть осеннюю афишу 2" href="#" modifier="button--glass hero__button"}}
+        </article>
+        
+
+      </div>
+
+      <!-- Управление: полоска автопрокрутки, счётчик, стрелки -->
+      <div class="hero__controls">
+        <div class="hero__progress"></div>
+        <div class="hero__counter"></div>
+        <button class="button button--glass button--icon button--prev hero__prev" type="button" aria-label="Предыдущий слайд"></button>
+        <button class="button button--glass button--icon button--next hero__next" type="button" aria-label="Следующий слайд"></button>
+      </div>
+    </div>
+  </div>
+</section>

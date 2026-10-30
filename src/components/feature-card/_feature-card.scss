@@ -1,0 +1,72 @@
+@use '../../styles/variables' as *;
+
+// Компонент: feature-card — цветная карточка с фото, метка сверху и заголовок снизу
+.feature-card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 544px;
+    height: 680px;
+    padding: 20px;
+    overflow: hidden;
+    color: #fff;
+    background-color: var(--card-bg, #{$color-primary});
+
+    // Крупный узор из букв на фоне. Положение и прозрачность задаёт блок, где лежит карточка
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% + var(--pattern-y, 0px));
+        left: calc(50% + var(--pattern-x, 0px));
+        z-index: -1;
+        width: 2042px;
+        height: 2040px;
+        background: url('/src/assets/images/interesting/card-pattern.svg') no-repeat center / contain;
+        opacity: var(--pattern-opacity, 0.15);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+
+    &__tag {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+    }
+
+    // Обёртка нужна: фото увеличивается при наведении и должно обрезаться по рамке
+    &__image {
+        height: 480px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+    }
+
+    &:hover &__image img {
+        transform: scale(1.08);
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+
+    // Последняя карточка: без фото, логотип и подпись по центру
+    &--final {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__logo {
+        width: 374px;
+        height: 225px;
+    }
+}

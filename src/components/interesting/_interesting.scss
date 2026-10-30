@@ -1,0 +1,97 @@
+@use '../../styles/variables' as *;
+
+// Блок: interesting — «В центре внимания».
+// Ряд карточек шире экрана — всё, что за краем, срезает overflow секции.
+// Нижний отступ больше верхнего: туда опускаются повёрнутые чётные карточки
+.interesting {
+    padding: 120px 0 99px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(225, 234, 232, 0.01) 62%, $color-line);
+}
+
+// Раскладка блока через области грида: на десктопе заголовок и текст в одной строке,
+// ряд карточек — второй строкой на всю ширину. Порядок меняется только здесь
+.container-interesting {
+    display: grid;
+    grid-template-areas:
+        'title text'
+        'list  list';
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    row-gap: 60px;
+
+    // На узких экранах — всё в одну колонку
+    @media (max-width: 1024px) {
+        grid-template-areas:
+            'title'
+            'text'
+            'list';
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+}
+
+.interesting__title {
+    grid-area: title;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 82px;
+}
+
+.interesting__text {
+    grid-area: text;
+    padding-top: 6px;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: right;
+    opacity: 0.6;
+
+    @media (max-width: 1024px) {
+        text-align: left;
+    }
+}
+
+// Карточки в одну строку, не сжимаются и уходят за правый край экрана
+.interesting__list {
+    grid-area: list;
+    display: flex;
+    gap: 16.5px;
+
+    .feature-card {
+        flex-shrink: 0;
+
+        // Нечётные: наклон 8° влево, узор в одном положении
+        &:nth-child(odd) {
+            --pattern-x: 340px;
+            --pattern-y: -212px;
+            transform: rotate(-8deg);
+        }
+
+        // Чётные: наклон 4° вправо, чуть ниже, узор в другом положении
+        &:nth-child(even) {
+            --pattern-x: 560px;
+            --pattern-y: -244px;
+            transform: translateY(51px) rotate(4deg);
+        }
+
+        // Цвета карточек по порядку, из палитры макета
+        &:nth-child(1) { --card-bg: #1eb9cb; }
+        &:nth-child(2) { --card-bg: #b78bff; }
+        &:nth-child(3) { --card-bg: #{$color-primary}; }
+        &:nth-child(4) { --card-bg: #ff871c; }
+
+        // На жёлтом фоне белый текст не читается — тёмно-зелёный, как в макете
+        &:nth-child(5) {
+            --card-bg: #ffc507;
+            --pattern-opacity: 0.07;
+            color: $color-primary;
+        }
+
+        &:nth-child(6) {
+            --card-bg: #008e1c;
+            --pattern-opacity: 0.07;
+        }
+
+        &:nth-child(7) { --card-bg: #{$color-primary}; }
+    }
+}
