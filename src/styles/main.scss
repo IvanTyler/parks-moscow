@@ -7,6 +7,12 @@
 @use '../components/button/button';
 @use '../components/feature-card/feature-card';
 @use '../components/hobby-card/hobby-card';
+@use '../components/tag/tag';
+@use '../components/event-card/event-card';
+@use '../components/events-list/events-list';
+@use '../components/afisha/afisha';
+@use '../components/calendar/calendar';
+@use '../components/categories/categories';
 
 // Блоки — по одному файлу на блок
 @use '../components/header/header';

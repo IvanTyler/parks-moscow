@@ -1,0 +1,15 @@
+@use '../../styles/variables' as *;
+
+// Компонент: tag — серо-зелёная плашка с мелким текстом капсом
+.tag {
+    display: inline-flex;
+    padding: 5px 8px;
+    border-radius: 4px;
+    color: $color-black;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: $color-line;
+}

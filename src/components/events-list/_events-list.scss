@@ -1,0 +1,44 @@
+@use '../../styles/variables' as *;
+
+// Компонент: events-list — сетка карточек событий и кнопка «Показать ещё»
+.events-list {
+    display: flex;
+    flex-direction: column;
+}
+
+// Сетка карточек: 4 колонки по 25% минус доля зазоров (24 × 3 / 4 = 18).
+// auto-fill сам перенесёт карточки на новую строку, если экран уже
+.events-list__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(25% - 18px), 1fr));
+    gap: 60px 24px;
+}
+
+// «Показать ещё» — по центру под сеткой
+.events-list__more {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: center;
+    margin-top: 60px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    color: $color-primary;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    transition: background-color 0.2s;
+
+    // Стрелка вниз — маска, поэтому цвет берётся из color кнопки
+    &::after {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-color: currentColor;
+        mask: url('/src/assets/icons/events/arrow-down.svg') center / 24px no-repeat;
+    }
+
+    &:hover {
+        background-color: $color-line;
+    }
+}

@@ -1,0 +1,89 @@
+@use '../../styles/variables' as *;
+
+// Компонент: event-card — карточка события: фото, парк, заголовок, описание, дата, теги.
+// Карточка — флекс-колонка, содержимое идёт сверху вниз, ссылка растянута на всю высоту
+.event-card {
+    display: flex;
+    flex-direction: column;
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    // Фото фиксированной высоты: в макете 402 × 230
+    &__image {
+        position: relative;
+        height: 230px;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+    }
+
+    &__link:hover &__img {
+        transform: scale(1.04);
+    }
+
+    // Плашка «Бесплатно» на фото: 10px от левого и нижнего края
+    &__badge {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        display: flex;
+        align-items: center;
+        height: 24px;
+        padding: 0 12px;
+        border-radius: 8px;
+        color: $color-primary;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        text-transform: uppercase;
+        background-color: $color-line;
+    }
+
+    // Название парка — мелкий капс над заголовком
+    &__park {
+        margin-top: 16px;
+        color: $color-primary;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin-top: 20px;
+        color: $color-primary;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+
+    &__text {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    // Дата отделена от описания увеличенным отступом — как в макете
+    &__date {
+        margin-top: 28px;
+        color: $color-primary;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+    }
+}

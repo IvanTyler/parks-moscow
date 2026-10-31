@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+
+// Компонент: afisha — заголовок слева, выбор парка и «Смотреть все» справа
+.afisha {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.afisha__title {
+    flex: 1;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 82px;
+}
+
+// Выбор парка: кнопка-выпадашка, стрелка — фоном (как иконка в поиске шапки).
+// Не select: он растягивается по самому длинному варианту и не совпадает с макетом
+.afisha__parks {
+    padding: 17px 52px 17px 20px;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    background: #fff url('/src/assets/icons/events/arrow-down.svg') no-repeat right 16px center / 24px;
+}

@@ -1,0 +1,6 @@
+// Компонент: categories — теги в строку, на узком экране переносятся
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}

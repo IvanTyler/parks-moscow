@@ -1,0 +1,67 @@
+@use '../../styles/variables' as *;
+
+// Компонент: calendar — месяц сверху, под ним дни и стрелка «дальше».
+// Отступ между колонками = расстоянию между днями, поэтому стрелка стоит в общем ритме
+.calendar {
+    display: grid;
+    grid-template-areas:
+        'month month'
+        'days  next';
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px 52px;
+}
+
+.calendar__month {
+    grid-area: month;
+    padding: 1px 0;
+    color: $color-muted;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+
+.calendar__days {
+    grid-area: days;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.calendar__day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.calendar__date {
+    width: 32px;
+    color: $color-primary;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.calendar__weekday {
+    width: 32px;
+    color: $color-muted;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+
+.calendar__next {
+    grid-area: next;
+
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-color: currentColor;
+        mask: url('/src/assets/icons/events/chevron-right.svg') center / 20px no-repeat;
+    }
+}

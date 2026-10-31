@@ -1,0 +1,6 @@
+<!-- Компонент: tag — плашка. button=true — кликабельный тег (фильтр), иначе просто подпись -->
+{{#if button}}
+<button class="tag{{#if modifier}} {{modifier}}{{/if}}" type="button">{{text}}</button>
+{{else}}
+<span class="tag{{#if modifier}} {{modifier}}{{/if}}">{{text}}</span>
+{{/if}}

@@ -1,3 +1,14 @@
-// Блок: events
+@use '../../styles/variables' as *;
+
+// Блок: events — «Афиша мероприятий». Сверху фон плавно уходит из зелёного в прозрачный
 .events {
+    padding: 120px 0 80px;
+    background: linear-gradient(to bottom, $color-line, rgba($color-line, 0) 269px);
+}
+
+// Все части блока идут друг под другом
+.container-events {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
