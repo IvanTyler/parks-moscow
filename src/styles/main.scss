@@ -13,10 +13,13 @@
 @use '../components/afisha/afisha';
 @use '../components/calendar/calendar';
 @use '../components/categories/categories';
+@use '../components/social-link/social-link';
+@use '../components/subscribe/subscribe';
 
 // Блоки — по одному файлу на блок
 @use '../components/header/header';
 @use '../components/nav/nav';
+@use '../components/breadcrumbs/breadcrumbs';
 @use '../components/hero/hero';
 @use '../components/interesting/interesting';
 @use '../components/hobbies/hobbies';

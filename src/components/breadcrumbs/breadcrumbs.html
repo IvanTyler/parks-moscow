@@ -1,0 +1,23 @@
+{{!-- Блок: breadcrumbs — хлебные крошки.
+     По ТЗ живут отдельным партиалом между шапкой и <main>: внутрь контейнера
+     с динамическим контентом они не попадают. На главной крошек нет, поэтому
+     партиал вызывается без данных и ничего не рисует. На внутренней странице:
+     {{> breadcrumbs crumbs=... }} где crumbs = [{ text, href }, ...],
+     последний элемент — текущая страница без href. --}}
+{{#if crumbs}}
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+  <div class="container">
+    <ol class="breadcrumbs__list">
+      {{#each crumbs}}
+        <li class="breadcrumbs__item">
+          {{#if href}}
+            <a class="breadcrumbs__link" href="{{href}}">{{text}}</a>
+          {{else}}
+            <span class="breadcrumbs__current" aria-current="page">{{text}}</span>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+</nav>
+{{/if}}

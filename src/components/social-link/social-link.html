@@ -1,0 +1,11 @@
+{{!-- Компонент: social-link — ссылка на соцсеть: иконка 48 × 48 и необязательная подпись.
+     Параметры:
+       href     — адрес;
+       icon     — путь к иконке 48 × 48;
+       label    — подпись для скринридера (нужна, когда нет видимого текста);
+       text     — видимая подпись (необязательно);
+       modifier — модификатор, например social-link--glass для стеклянной плашки. --}}
+<a class="social-link{{#if modifier}} {{modifier}}{{/if}}" href="{{href}}"{{#unless text}}{{#if label}} aria-label="{{label}}"{{/if}}{{/unless}}>
+  <img class="social-link__icon" src="{{icon}}" alt="" width="48" height="48" loading="lazy">
+  {{#if text}}<span class="social-link__text">{{text}}</span>{{/if}}
+</a>

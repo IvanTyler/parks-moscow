@@ -1,5 +1,40 @@
-<!-- Блок: about -->
+{{!-- Блок: about — «Парки Москвы» и «Мы всегда рядом» (макет Hero Strip_2, узел 1:7710).
+     Секция 1232: 120 сверху, строка 626 из двух колонок по 828,
+     карточка подписки заезжает на -60 под зелёную панель, конверт — ещё на -60.
+     Снизу отступа нет: у «Партнёров» свой верхний.
+
+     Плашки соцсетей и карточка подписки — отдельные компоненты
+     (social-link, subscribe), а не элементы этого блока. --}}
 <section class="about">
-  <div class="container">
+  <div class="container container-about">
+    <div class="about__body">
+      <div class="about__text">
+        <div class="about__intro">
+          <h2 class="about__title">Парки Москвы</h2>
+          <p class="about__desc">АНО «Развитие парков» занимается благоустройством и развитием парковых территорий, подведомственных Департаменту культуры города Москвы, созданием в них условий для комфортного пребывания, внедрением новых сервисов и услуг, организацией мероприятий и регулярных занятий для жителей и гостей столицы.</p>
+        </div>
+        <div class="about__buttons">
+          {{> button text="Задать вопрос" href="#" modifier="button--filled"}}
+          {{> button text="Больше о нас" href="#" modifier="button--outline"}}
+        </div>
+      </div>
+
+      <!-- Зелёная панель: фон — готовый SVG из макета (силуэт с вырезом + узор) -->
+      <div class="about__social">
+        <h3 class="about__social-title">Мы всегда<br>рядом</h3>
+        <div class="about__links">
+          {{> social-link href="#" icon="/src/assets/icons/about/social-max-white.svg" text="Мы в МАКСЕ" modifier="social-link--glass"}}
+          {{> social-link href="#" icon="/src/assets/icons/about/social-tg-white.svg" text="Наш Телеграм" modifier="social-link--glass"}}
+          {{> social-link href="#" icon="/src/assets/icons/about/social-dzen-white.svg" text="Читайте нас в Дзен" modifier="social-link--glass"}}
+          {{> social-link href="#" icon="/src/assets/icons/about/social-vk-white.svg" text="Официальная группа в Вконтакте" modifier="social-link--glass"}}
+          {{> social-link href="#" icon="/src/assets/icons/about/social-hh-white.svg" text="Наши вакансии" modifier="social-link--glass"}}
+        </div>
+      </div>
+    </div>
+
+    {{> subscribe}}
+
+    <!-- Декоративный конверт под карточкой, тоже с заездом -60 -->
+    <img class="about__mail" src="/src/assets/images/about/about-mail.svg" alt="" width="148" height="126" loading="lazy">
   </div>
 </section>

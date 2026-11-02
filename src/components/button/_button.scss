@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 // Компонент: button — общие кнопки сайта, вид задаётся модификаторами
 .button {
     display: inline-flex;
@@ -22,14 +24,46 @@
         }
     }
 
-    // Светлая: белый круг с тёмной иконкой — для светлого фона
+    // Светлая: белый круг с тёмной иконкой — для светлого фона.
+    // Ховер в макете — слой #000e33 с прозрачностью 7%
     &--light {
         color: #000;
         background-color: #fff;
 
         &:hover {
-            background-color: #f2f5f4;
+            background-color: $color-hover;
         }
+    }
+
+    // Тёмная кнопка на светлом фоне: 56 в высоту, по 48 отступа по бокам
+    &--filled {
+        height: 56px;
+        padding: 0 48px;
+        color: #fff;
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: #0b3f33;
+        }
+    }
+
+    // Прозрачная кнопка рядом с тёмной: без заливки, тёмный текст
+    &--outline {
+        height: 56px;
+        padding: 0 48px;
+        color: $color-black;
+        background-color: transparent;
+
+        &:hover {
+            background-color: $color-hover;
+        }
+    }
+
+    // Стрелка на краю ленты: недоступна, пока листать некуда
+    &:disabled {
+        opacity: 0.4;
+        cursor: default;
+        pointer-events: none;
     }
 
     // Неактивная стрелка слайдера (Swiper вешает этот класс на краях)
@@ -38,7 +72,7 @@
         cursor: default;
     }
 
-    // Круглая кнопка с одной иконкой
+    // Круглая кнопка с одной иконкой: 56 × 56, как «Button Base» в макете
     &--icon {
         padding: 16px;
         border-radius: 100px;
@@ -52,14 +86,14 @@
         width: 24px;
         height: 24px;
         background-color: currentColor;
-        mask: url('/src/assets/icons/hero/arrow-long-left.svg') center / 20px no-repeat;
+        mask: url('/src/assets/icons/hero/arrow-long-left.svg') center / 24px no-repeat;
     }
 
     &--next::before {
         mask-image: url('/src/assets/icons/hero/arrow-long-right.svg');
     }
 
-    // Кнопка с текстом и стрелкой справа («Смотреть все»)
+    // Кнопка с текстом и стрелкой справа («Все статьи», «Смотреть все»)
     &--arrow {
         padding: 16px 22px 16px 24px;
 
@@ -68,7 +102,12 @@
             width: 24px;
             height: 24px;
             background-color: currentColor;
-            mask: url('/src/assets/icons/hero/arrow-long-right.svg') center / 20px no-repeat;
+            mask: url('/src/assets/icons/hero/arrow-long-right.svg') center / 24px no-repeat;
+            transition: transform 0.2s;
+        }
+
+        &:hover::after {
+            transform: translateX(4px);
         }
     }
 }

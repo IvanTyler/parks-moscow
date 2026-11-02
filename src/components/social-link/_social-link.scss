@@ -1,0 +1,44 @@
+@use '../../styles/variables' as *;
+
+// Компонент: social-link — ссылка на соцсеть. В подвале это просто иконка 48 × 48,
+// на зелёной панели «Мы всегда рядом» — стеклянная плашка с подписью.
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    height: 48px;
+
+    &__icon {
+        flex: none;
+        width: 48px;
+        height: 48px;
+        // Иконка не должна перетаскиваться как картинка и ловить клики
+        // при протягивании ленты партнёров
+        user-select: none;
+        pointer-events: none;
+    }
+
+    // Цвет наследуется от модификатора: в подвале текст не используется,
+    // в стеклянной плашке он белый
+    &__text {
+        color: inherit;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        white-space: nowrap;
+    }
+
+    // Плашка из макета: белая заливка 10 % и размытие 12px, радиус 24
+    &--glass {
+        padding-right: 20px;
+        border-radius: 24px;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}

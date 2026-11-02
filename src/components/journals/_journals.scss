@@ -1,3 +1,166 @@
-// Блок: journals
+@use '../../styles/variables' as *;
+
+// Блок: journals — «Новый выпуск журнала» (макет 07 / Онлайн-журналы).
+// Размеры взяты из Figma: секция 1:7685, обложка 1:7700, карточки 1:7701, кнопки 1:7705
+
+// Контейнер секции — flex-колонка с шагом 32, как в авто-лейауте макета
+.container-journals {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
 .journals {
+    // Высота секции 870: 100 сверху + шапка 82 + шаг 32 + тело 656. Снизу 0 —
+    // у секции «Партнёры» свой верхний отступ 120
+    padding: 100px 0 0;
+
+    // Фон в макете — градиент от прозрачного #f6f8f7 внизу к тому же цвету сверху,
+    // поэтому секция бесшовно «впадает» в новости над ней
+    background-image: linear-gradient(180deg, rgba($color-bg-soft, 0), $color-bg-soft);
+
+    // Страховка: слайдер с длинной лентой слайдов не должен растягивать страницу
+    overflow: hidden;
+
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    &__title {
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 82px;
+    }
+
+    // Подзаголовок 24/28 прижат вправо и поднят на 10px от нижнего края строки
+    &__subtitle {
+        padding-bottom: 10px;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: right;
+    }
+
+    &__body {
+        display: flex;
+        gap: 24px;
+        min-width: 0;
+    }
+
+    // Правая колонка: карточки сверху, строка управления у нижнего края обложки.
+    // 656 − 529 − 56 = 71px свободного шага — ровно как в макете (space-between)
+    &__materials {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 0;
+    }
+
+    &__slider {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    // Карточки фиксированной ширины, как в макете.
+    // Ширину задаём и слайду, и самой карточке: Swiper с slidesPerView: 'auto'
+    // меряет слайд по содержимому, а без ширины карточка сжимается
+    &__slider .swiper-slide,
+    &__slider .event-card {
+        width: 402px;
+    }
+
+    // Высота карточки в макете фиксированная — 529. Минимум, а не жёсткая высота:
+    // на переносах заголовка карточка не должна обрезаться
+    &__slider .event-card {
+        min-height: 529px;
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 24px;
+    }
+
+    // Две стрелки слайдера: шаг 16, как в группе «Навигация партнеров»
+    &__nav {
+        display: flex;
+        gap: 16px;
+    }
+}
+
+// Обложка выпуска: внешний блок задаёт размеры, внутренний слой обрезается маской
+// по силуэту из SVG. Метка выпуска лежит снаружи — она стоит в белом вырезе
+.journal-cover {
+    position: relative;
+    flex: 0 0 828px;
+    height: 656px;
+}
+
+.journal-cover__inner {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background-color: $color-journal;
+    background-image: url('/src/assets/images/journals/journals-cover-decor.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    mask-image: url('/src/assets/images/journals/journals-cover-shape.svg');
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+}
+
+// Метка «Осень 2026» — обычный tag из компонента, 40 × 40 от краёв обложки
+.journal-cover__tag {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 4px;
+    color: $color-primary;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+    background-color: $color-line;
+}
+
+.journal-cover__label {
+    position: absolute;
+    top: 120px;
+    left: 40px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+
+.journal-cover__logo {
+    position: absolute;
+    top: 152px;
+    left: 40px;
+    width: 173px;
+    height: 48px;
+}
+
+// Фото повёрнуто на 5.33° по часовой стрелке.
+// Прямоугольник до поворота 457.5 × 653.5, его левый верхний угол после
+// поворота встаёт в (399.8, 51.2) от левого верха обложки — отсюда left/top
+.journal-cover__image {
+    position: absolute;
+    top: 71px;
+    left: 369px;
+    width: 457.5px;
+    height: 653.5px;
+    object-fit: cover;
+    background-color: #000; // подложка узла «Photo» в макете
+    transform: rotate(5.33deg);
 }

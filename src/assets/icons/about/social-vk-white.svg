@@ -1,32 +1,9 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="&#208;&#159;&#208;&#176;&#209;&#128;&#208;&#186;&#208;&#184; &#208;&#156;&#208;&#190;&#209;&#129;&#208;&#186;&#208;&#178;&#209;&#139; / &#208;&#147;&#208;&#187;&#208;&#176;&#208;&#178;&#208;&#189;&#208;&#176;&#209;&#143; / Wireframe 1921">
-<rect width="1920" height="9973.24" transform="translate(-1032 -7789.24)" fill="white"/>
-<g id="Hero Strip_2">
-<rect width="1920" height="1232" transform="translate(-1032 -578)" fill="#F6F8F7"/>
-<g id="Frame 2136138682">
-<g id="social">
-<g id="Content Area" clip-path="url(#clip0_0_1)">
-<g id="Frame 25">
-<foreignObject x="-24" y="-24" width="363" height="96"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(12px);clip-path:url(#bgblur_1_0_1_clip_path);height:100%;width:100%"></div></foreignObject><g id="&#208;&#161;&#208;&#190;&#209;&#134;&#209;&#129;&#208;&#181;&#209;&#130;&#208;&#184;" data-figma-bg-blur-radius="24">
-<rect width="315" height="48" rx="24" fill="white" fill-opacity="0.1"/>
-<g id="Group">
-<g id="Frame" clip-path="url(#clip2_0_1)">
-<path id="Vector" d="M24.9625 31C17.4688 31 13.2063 25.75 13 17H16.7812C16.9188 23.44 19.6687 26.1 21.8687 26.66V17H25.4438V22.53C27.575 22.32 29.8438 19.8 30.6688 17H34.2437C33.625 20.43 31.15 22.95 29.4312 24C31.2188 24.84 34.0375 27.01 35.0687 31H31.15C30.325 28.34 28.1938 26.31 25.4438 26.03V31H24.9625Z" fill="white"/>
-</g>
-</g>
-</g>
-</g>
-</g>
-</g>
-</g>
-</g>
+<g clip-path="url(#clip0_1_7815)">
+<path d="M24.9625 31C17.4688 31 13.2063 25.75 13 17H16.7812C16.9188 23.44 19.6687 26.1 21.8687 26.66V17H25.4438V22.53C27.575 22.32 29.8438 19.8 30.6688 17H34.2437C33.625 20.43 31.15 22.95 29.4312 24C31.2188 24.84 34.0375 27.01 35.0687 31H31.15C30.325 28.34 28.1938 26.31 25.4438 26.03V31H24.9625Z" fill="white"/>
 </g>
 <defs>
-<clipPath id="bgblur_1_0_1_clip_path" transform="translate(24 24)"><rect width="315" height="48" rx="24"/>
-</clipPath><clipPath id="clip0_0_1">
-<rect width="708" height="108" fill="white" transform="translate(0 -60)"/>
-</clipPath>
-<clipPath id="clip2_0_1">
+<clipPath id="clip0_1_7815">
 <rect width="22" height="14" fill="white" transform="translate(13 17)"/>
 </clipPath>
 </defs>

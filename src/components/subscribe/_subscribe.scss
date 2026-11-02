@@ -1,0 +1,92 @@
+@use '../../styles/variables' as *;
+
+// Компонент: subscribe — карточка подписки 828 × 480 (макет Hero Strip_2, узел 1:7825).
+// Внутри: заголовок 48/54, подпись 20/24, поле 441 × 56 и кнопка 203 × 56
+
+.subscribe {
+    width: 828px;
+    padding: 120px 80px;
+    background-color: #fff;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__texts {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__title {
+        color: $color-primary;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 54px;
+    }
+
+    &__text {
+        color: $color-primary;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    // Поле 441 + шаг 24 + кнопка 203 = 668 — ровно ширина контента карточки.
+    // Сообщение об ошибке висит абсолютом и не сдвигает кнопку
+    &__form {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    &__field {
+        position: relative;
+        flex: 0 0 441px;
+    }
+
+    // Поле подчёркнуто только снизу, без рамки по бокам
+    &__input {
+        width: 441px;
+        height: 56px;
+        padding: 17px 0;
+        border: 0;
+        border-bottom: 1px solid $color-primary;
+        border-radius: 0;
+        color: $color-primary;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        background-color: transparent;
+
+        &::placeholder {
+            color: rgba(0, 14, 51, 0.3);
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom-color: $color-primary;
+            box-shadow: 0 1px 0 0 $color-primary;
+        }
+    }
+
+    // Ошибка красным под полем, успех — фирменным зелёным
+    &__error {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 8px;
+        color: $color-error;
+        font-size: 14px;
+        line-height: 18px;
+
+        &--success {
+            color: $color-primary;
+        }
+    }
+
+    &__form--invalid &__input {
+        border-bottom-color: $color-error;
+    }
+}

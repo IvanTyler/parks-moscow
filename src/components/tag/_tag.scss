@@ -1,11 +1,12 @@
 @use '../../styles/variables' as *;
 
-// Компонент: tag — серо-зелёная плашка с мелким текстом капсом
+// Компонент: tag — серо-зелёная плашка с мелким текстом капсом (24px в высоту)
 .tag {
     display: inline-flex;
+    align-items: center;
     padding: 5px 8px;
     border-radius: 4px;
-    color: $color-black;
+    color: $color-primary;
     font-size: 12px;
     font-weight: 500;
     line-height: 14px;

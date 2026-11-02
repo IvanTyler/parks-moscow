@@ -1,8 +1,24 @@
 @use 'variables' as *;
 
+// Прижимаем подвал к низу страницы, как в «Ракурсе»: страница — flex-колонка,
+// main забирает свободное место, подвал всегда упирается в низ окна
+html {
+    height: 100%;
+    // Страховка от горизонтального скролла: ни один блок не должен растягивать
+    // страницу. clip, а не hidden — он не создаёт скролл-контейнер и не ломает sticky
+    overflow-x: clip;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     font-family: $font-main;
     color: $color-black;
+}
+
+main {
+    flex: 1 1 auto;
 }
 
 // Глобальный контейнер — как ContainerSection в «Ракурсе», только классом:

@@ -1,5 +1,42 @@
-<!-- Блок: partners -->
+<!-- Блок: partners — «Партнеры 2026 года» (макет, узел 1:7842).
+     Секция 546: 120 сверху, заголовок 82, сетка логотипов 144, строка управления 56,
+     80 снизу; шаг между блоками 32. Фон тот же #f6f8f7, что у «Парков Москвы».
+     Скрытые в макете Vector 265 и подчёркивание заголовка не переносим. -->
 <section class="partners">
-  <div class="container">
+  <div class="container container-partners">
+    <h2 class="partners__title">Партнеры</h2>
+
+    <!-- Шесть ячеек по 260 и шаг 24 дают ровно 1680. Если партнёров станет
+         больше, лента начнёт скроллиться стрелками -->
+    <div class="partners__viewport">
+      <ul class="partners__list">
+        <li class="partners__item">
+          <img class="partners__logo" src="/src/assets/images/partners/partner-cod.png" alt="COD" width="102" height="40" loading="lazy">
+        </li>
+        <li class="partners__item">
+          <img class="partners__logo" src="/src/assets/images/partners/partner-ozon.png" alt="Ozon" width="85" height="48" loading="lazy">
+        </li>
+        <li class="partners__item">
+          <img class="partners__logo" src="/src/assets/images/partners/muzey-russkogo-impressionizma.png" alt="Музей русского импрессионизма" width="122" height="48" loading="lazy">
+        </li>
+        <li class="partners__item">
+          <img class="partners__logo" src="/src/assets/images/partners/soyuzmultfilm.png" alt="Союзмультфильм" width="146" height="42" loading="lazy">
+        </li>
+        <li class="partners__item">
+          <img class="partners__logo" src="/src/assets/images/partners/premier.png" alt="Premier" width="144" height="18" loading="lazy">
+        </li>
+        <li class="partners__item">
+          <img class="partners__logo" src="/src/assets/images/partners/partner-vkusvil.png" alt="ВкусВилл" width="84" height="42" loading="lazy">
+        </li>
+      </ul>
+    </div>
+
+    <div class="partners__controls">
+      <div class="partners__nav">
+        <button class="button button--light button--icon button--prev partners__prev" type="button" aria-label="Предыдущие партнеры"></button>
+        <button class="button button--light button--icon button--next partners__next" type="button" aria-label="Следующие партнеры"></button>
+      </div>
+      {{> button text="Все партнеры" href="#" modifier="button--light button--arrow"}}
+    </div>
   </div>
 </section>

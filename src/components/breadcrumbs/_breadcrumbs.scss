@@ -1,0 +1,51 @@
+@use '../../styles/variables' as *;
+
+// Блок: breadcrumbs — хлебные крошки. Отдельный партиал между шапкой и <main>,
+// по ТЗ не вкладывается в контейнер динамического контента
+.breadcrumbs {
+    padding: 24px 0 0;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        // Разделитель — стрелка из общего набора иконок, цвет через маску
+        &:not(:last-child)::after {
+            content: '';
+            flex: none;
+            width: 16px;
+            height: 16px;
+            background-color: $color-muted;
+            mask: url('/src/assets/icons/events/chevron-right.svg') center / 16px no-repeat;
+        }
+    }
+
+    &__link,
+    &__current {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &__link {
+        color: $color-gray;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &__current {
+        color: $color-black;
+    }
+}

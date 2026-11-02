@@ -1,5 +1,93 @@
-<!-- Блок: footer -->
+<!-- Блок: footer — подвал (макет, узел 1:7861), 1920×984, фон белый.
+     100 сверху, строка логотипов 160, тёмная карточка 580, правовая строка 48,
+     32 снизу; шаг между частями 32.
+     По ТЗ подвал физически отделён от контейнера контента: лежит после </main>
+     и не вложен в общий контейнер страницы. -->
 <footer class="footer">
-  <div class="container">
+  <div class="container container-footer">
+    <!-- Логотипы ведомств: ячейка 263 × 160, лого по центру -->
+    <div class="footer__logos">
+      <a class="footer__logo-cell" href="#" aria-label="Лето в Москве">
+        <img src="/src/assets/images/footer/logo-leto-v-moskve.svg" alt="Лето в Москве" width="103" height="44" loading="lazy">
+      </a>
+      <a class="footer__logo-cell" href="#" aria-label="Мосбилет">
+        <img src="/src/assets/images/footer/logo-mosbilet.svg" alt="Мосбилет" width="140" height="30" loading="lazy">
+      </a>
+      <a class="footer__logo-cell" href="#" aria-label="Культура Москвы">
+        <img src="/src/assets/images/footer/logo-kultura-moskvy.svg" alt="Культура Москвы" width="140" height="34" loading="lazy">
+      </a>
+      <a class="footer__logo-cell" href="#" aria-label="Департамент культуры города Москвы">
+        <img src="/src/assets/images/footer/logo-departament-kultury.svg" alt="Департамент культуры города Москвы" width="140" height="52" loading="lazy">
+      </a>
+      <a class="footer__logo-cell" href="#" aria-label="Кадровый центр">
+        <img src="/src/assets/images/footer/logo-kadrovyy-centr.png" alt="Кадровый центр" width="128" height="92" loading="lazy">
+      </a>
+      <a class="footer__logo-cell" href="#" aria-label="Про культуру">
+        <img src="/src/assets/images/footer/logo-pro-kultura.svg" alt="Про культуру" width="200" height="18" loading="lazy">
+      </a>
+    </div>
+
+    <!-- Тёмная карточка: фон — готовые SVG из макета (силуэт с вырезом + узор) -->
+    <div class="footer__card">
+      <a class="footer__brand" href="/" aria-label="Парки Москвы — на главную">
+        <img src="/src/assets/images/footer/logo-parki-moskvy-footer.svg" alt="Парки Москвы" width="130" height="32">
+      </a>
+
+      <nav class="footer__menu" aria-label="Меню в подвале">
+        <ul class="footer__menu-col">
+          <li class="footer__menu-item"><a class="footer__menu-link" href="#">Об организации</a></li>
+          <li class="footer__menu-item"><a class="footer__menu-link" href="#">Афиша</a></li>
+          <li class="footer__menu-item"><a class="footer__menu-link" href="#">Новости</a></li>
+        </ul>
+        <ul class="footer__menu-col">
+          <li class="footer__menu-item"><a class="footer__menu-link" href="#">Стать партнером</a></li>
+          <li class="footer__menu-item"><a class="footer__menu-link" href="#">Открой бизнес</a></li>
+          <li class="footer__menu-item"><a class="footer__menu-link" href="#">Медиа</a></li>
+        </ul>
+        <ul class="footer__menu-col">
+          <li class="footer__menu-item"><a class="footer__menu-link" href="#">К любимому парку</a></li>
+          <li class="footer__menu-item"><a class="footer__menu-link" href="#">Инфраструктура</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__emails">
+        <div class="footer__mail">
+          <span class="footer__label">Для посетителей</span>
+          <a class="footer__mail-link" href="mailto:info-parki@culture.mos.ru">info-parki@culture.mos.ru</a>
+        </div>
+        <div class="footer__mail">
+          <span class="footer__label">Для СМИ</span>
+          <a class="footer__mail-link" href="mailto:info-pr-parki@culture.mos.ru">info-pr-parki@culture.mos.ru</a>
+        </div>
+        <div class="footer__mail">
+          <span class="footer__label">По вопросам проведения мероприятий</span>
+          <a class="footer__mail-link" href="mailto:info-event-parki@culture.mos.ru">info-event-parki@culture.mos.ru</a>
+        </div>
+      </div>
+
+      <div class="footer__contacts">
+        <div class="footer__contact">
+          <span class="footer__label">Телефон</span>
+          <a class="footer__contact-value" href="tel:+74957271077">+7 (495) 727-10-77</a>
+        </div>
+        <div class="footer__contact">
+          <span class="footer__label">Адрес</span>
+          <p class="footer__contact-value">107031, Москва, ул. Неглинная, д. 8/10, пом. 2А/1, ком. 49</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Правовая строка: © слева, соцсети по центру, «Сделано» справа -->
+    <div class="footer__legal">
+      <p class="footer__copyright">© Парки Москвы, 2026</p>
+      <div class="footer__socials">
+        {{> social-link href="#" label="Мы в МАКСЕ" icon="/src/assets/icons/footer/social-max.svg"}}
+        {{> social-link href="#" label="Наш Телеграм" icon="/src/assets/icons/footer/social-tg.svg"}}
+        {{> social-link href="#" label="Читайте нас в Дзен" icon="/src/assets/icons/footer/social-dzen.svg"}}
+        {{> social-link href="#" label="Официальная группа в Вконтакте" icon="/src/assets/icons/footer/social-vk.svg"}}
+        {{> social-link href="#" label="Наши вакансии" icon="/src/assets/icons/footer/social-hh.svg"}}
+      </div>
+      <p class="footer__made">Сделано — Энсайн</p>
+    </div>
   </div>
 </footer>

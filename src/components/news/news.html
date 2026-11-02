@@ -1,5 +1,62 @@
-<!-- Блок: news -->
+<!-- Блок: news — «Кстати, у нас новости».
+     Карточки те же, что в афише, поэтому используется компонент event-card -->
 <section class="news">
-  <div class="container">
+  <div class="container news__inner">
+    <div class="news__head">
+      <h2 class="news__title">Кстати, у нас новости</h2>
+      <a class="news__all" href="#">Все новости</a>
+    </div>
+
+    <div class="news__grid">
+      {{#> event-card
+          href="#"
+          image="/src/assets/images/interesting/new-playgrounds.png"
+          park="5 парков"
+          title="В парках Москвы появились новые площадки для отдыха и активного досуга"
+          text="Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе."
+          date="11 октября 2026"
+          datetime="2026-10-11"}}
+        {{> tag text="Экскурсии"}}
+        {{> tag text="Выставки"}}
+        {{> tag text="Мастер-классы"}}
+      {{/event-card}}
+
+      {{#> event-card
+          href="#"
+          image="/src/assets/images/news/autumn-season-opening.png"
+          park="5 парков"
+          title="В парках Москвы открывается осенний сезон"
+          text="Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе."
+          date="11 октября 2026"
+          datetime="2026-10-11"}}
+        {{> tag text="Экскурсии"}}
+        {{> tag text="Выставки"}}
+        {{> tag text="Мастер-классы"}}
+      {{/event-card}}
+
+      {{#> event-card
+          href="#"
+          image="/src/assets/images/news/concerts-and-workshops.png"
+          park="5 парков"
+          title="Осенние выходные: концерты и мастер-классы"
+          text="Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе."
+          date="10 октября 2026"
+          datetime="2026-10-10"}}
+        {{> tag text="Спорт"}}
+      {{/event-card}}
+
+      {{#> event-card
+          href="#"
+          image="/src/assets/images/news/family-autumn-holidays.png"
+          park="Коробковский сад"
+          title="Парки приглашают на семейные праздники осени"
+          text="Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе."
+          date="10 октября 2026"
+          datetime="2026-10-10"}}
+        {{> tag text="Фестивали"}}
+        {{> tag text="Концерты"}}
+        {{> tag text="Детям"}}
+      {{/event-card}}
+    </div>
   </div>
 </section>

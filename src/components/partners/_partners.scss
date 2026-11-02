@@ -1,3 +1,81 @@
-// Блок: partners
+@use '../../styles/variables' as *;
+
+// Блок: partners — «Партнеры 2026 года» (узел 1:7842).
+// Секция 546: 120 сверху, заголовок 82, сетка 144, управление 56, 80 снизу, шаг 32
+
+.container-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
 .partners {
+    padding: 120px 0 80px;
+    background-color: $color-bg-soft;
+
+    &__title {
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 82px;
+    }
+
+    // Лента листается по кругу: вторая копия ячеек добавляется скриптом.
+    // scroll-behavior здесь не задаём: возврат в начало должен быть мгновенным,
+    // плавность включается точечно из JS через behavior: 'smooth'
+    &__viewport {
+        overflow-x: auto;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+        cursor: grab;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        // Пока тянут мышью — снап выключен, иначе браузер дёргает ленту под курсором
+        &--dragging {
+            cursor: grabbing;
+            scroll-snap-type: none;
+            user-select: none;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    // Ячейка 260 × 144 с белой подложкой 20 %, лого по центру
+    &__item {
+        display: flex;
+        flex: 0 0 260px;
+        align-items: center;
+        justify-content: center;
+        height: 144px;
+        background-color: rgba(255, 255, 255, 0.2);
+        scroll-snap-align: start;
+    }
+
+    &__logo {
+        display: block;
+        // Логотип не должен уезжать как картинка при протягивании ленты
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    // Стрелки слева, «Все партнеры» справа — по краям строки 1680
+    &__controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 16px;
+    }
 }

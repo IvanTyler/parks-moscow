@@ -1,3 +1,166 @@
-// Блок: footer
+@use '../../styles/variables' as *;
+
+// Блок: footer — подвал (узел 1:7861). 1920×984: 100 сверху, строка логотипов 160,
+// тёмная карточка 580, правовая строка 48, 32 снизу; шаг между частями 32
+
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
 .footer {
+    padding: 100px 0 32px;
+    background-color: #fff;
+
+    // Шесть логотипов ведомств: ячейка 263 × 160, шаг 20
+    &__logos {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__logo-cell {
+        display: flex;
+        flex: 0 0 263px;
+        align-items: center;
+        justify-content: center;
+        height: 160px;
+    }
+
+    // Тёмная карточка с вырезом: фон — готовые SVG из макета.
+    // Цвет подложки не задаём: вырез должен просвечивать белым
+    &__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 80px 120px 80px 426px;
+        background-image: url('/src/assets/images/footer/footer-bg-pattern.svg'),
+            url('/src/assets/images/footer/footer-bg-shape.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    // Логотип стоит отдельно от колонок: 40 × 40 от краёв карточки
+    &__brand {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        display: block;
+        width: 130px;
+        height: 32px;
+    }
+
+    &__menu {
+        display: flex;
+        gap: 40px;
+    }
+
+    // Колонка 351, шаг между ссылками 36
+    &__menu-col {
+        display: flex;
+        flex: 0 0 351px;
+        flex-direction: column;
+        gap: 36px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    // Колонка меню: пункты без собственных стилей, шаг задаёт gap колонки
+    &__menu-item {
+        display: block;
+    }
+
+    &__menu-link {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__emails {
+        display: flex;
+        gap: 24px;
+    }
+
+    // Подпись 14/18 сверху, адрес 20/24 под ней с шагом 4
+    &__mail {
+        display: flex;
+        flex: 0 0 362px;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__label {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        text-transform: uppercase;
+    }
+
+    &__mail-link {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    // Контакты: телефон и адрес, третий столбец в макете продублирован
+    // тёмно-зелёным по тёмному и не читается — его не переносим
+    &__contacts {
+        display: flex;
+        gap: 24px;
+    }
+
+    &__contact {
+        display: flex;
+        flex: 0 0 362px;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__contact-value {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    // Правовая строка: © слева, соцсети по центру, «Сделано» справа.
+    // Боковым блокам отдаём по равной доле — тогда соцсети встают ровно по центру
+    &__legal {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__copyright,
+    &__made {
+        flex: 1 1 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+
+    &__copyright {
+        color: $color-black;
+    }
+
+    &__made {
+        color: $color-primary;
+        text-align: right;
+    }
+
+    // Соцсети — компонент social-link, здесь только шаг между иконками
+    &__socials {
+        display: flex;
+        flex: none;
+        gap: 24px;
+    }
 }

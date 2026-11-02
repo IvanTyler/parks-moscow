@@ -1,15 +1,17 @@
 @use '../../styles/variables' as *;
 
-// Компонент: event-card — карточка события: фото, парк, заголовок, описание, дата, теги.
-// Карточка — флекс-колонка, содержимое идёт сверху вниз, ссылка растянута на всю высоту
+// Компонент: event-card — карточка события: фото, рубрика+парк, заголовок, описание, дата, теги.
+// Все вертикальные шаги — 16px, как в авто-лейауте компонента «Card» (itemSpacing: 16)
 .event-card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 
     &__link {
         display: flex;
         flex-direction: column;
         height: 100%;
+        min-width: 0;
     }
 
     // Фото фиксированной высоты: в макете 402 × 230
@@ -30,7 +32,7 @@
         transform: scale(1.04);
     }
 
-    // Плашка «Бесплатно» на фото: 10px от левого и нижнего края
+    // Плашка «Бесплатно» на фото: тот же tag, 10px от левого и нижнего края
     &__badge {
         position: absolute;
         bottom: 10px;
@@ -38,8 +40,8 @@
         display: flex;
         align-items: center;
         height: 24px;
-        padding: 0 12px;
-        border-radius: 8px;
+        padding: 0 8px;
+        border-radius: 4px;
         color: $color-primary;
         font-size: 12px;
         font-weight: 500;
@@ -48,18 +50,41 @@
         background-color: $color-line;
     }
 
-    // Название парка — мелкий капс над заголовком
-    &__park {
+    // Рубрика и парк — строка через точку-разделитель, высота строки 16
+    &__meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
         margin-top: 16px;
+        min-height: 16px;
+        min-width: 0;
+    }
+
+    // Длинное название парка переносится, а не растягивает карточку
+    &__category,
+    &__park {
+        min-width: 0;
+        overflow: hidden;
         color: $color-primary;
         font-size: 12px;
         font-weight: 500;
         line-height: 14px;
         text-transform: uppercase;
+        text-overflow: ellipsis;
+    }
+
+    // Разделитель из макета: 8 × 8, цвет наследуется от строки
+    &__dot {
+        flex: none;
+        width: 8px;
+        height: 8px;
+        background-color: currentColor;
+        mask: url('/src/assets/icons/event-card/card-meta-dot.svg') center / 8px no-repeat;
     }
 
     &__title {
-        margin-top: 20px;
+        margin-top: 16px;
         color: $color-primary;
         font-size: 24px;
         font-weight: 500;
@@ -72,12 +97,12 @@
         line-height: 20px;
     }
 
-    // Дата отделена от описания увеличенным отступом — как в макете
+    // В макете дата набрана Inter 16/20.8 — из-за чужого файла метрика округляется до 21px
     &__date {
-        margin-top: 28px;
+        margin-top: 16px;
         color: $color-primary;
         font-size: 16px;
-        line-height: 22px;
+        line-height: 21px;
     }
 
     &__tags {
