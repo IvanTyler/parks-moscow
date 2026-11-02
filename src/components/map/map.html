@@ -1,71 +1,8 @@
-<!-- Блок: map — «Выберем ваш Парк Москвы?»: фильтры слева, карта с метками справа -->
+<!-- Блок: map — «Выберем ваш Парк Москвы?»: панель фильтров и карта.
+     Обе части — самостоятельные блоки (map-panel, map-view), раскладку держит контейнер -->
 <section class="map">
-  <div class="container map__inner">
-    <div class="map__panel">
-      <h2 class="map__title">Выберем<br>ваш Парк Москвы?</h2>
-
-      <button class="map__select" type="button" data-map-reset>
-        Все парки Москвы
-      </button>
-
-      <p class="map__label">Округа</p>
-      <ul class="map-chips" data-map-districts>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Центральный">Центральный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Северный">Северный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Северо-Восточный">Северо-Восточный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Восточный">Восточный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Юго-Восточный">Юго-Восточный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Южный">Южный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Юго-Западный">Юго-Западный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Западный">Западный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Северо-Западный">Северо-Западный</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Зеленоградский">Зеленоградский</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Троицкий">Троицкий</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Новомосковский">Новомосковский</button></li>
-      </ul>
-
-      <p class="map__label">Интересы</p>
-      <ul class="map-chips" data-map-interests>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Культура">Культура</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Семейный отдых">Семейный отдых</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Спорт и активный отдых">Спорт и активный отдых</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Детский отдых">Детский отдых</button></li>
-        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Природно-исторический парк">Природно-исторический парк</button></li>
-      </ul>
-    </div>
-
-    <div class="map__map">
-      <div class="map__canvas" data-map-canvas>
-        <img class="map__image" src="/src/assets/images/map/map-moscow.png" alt="Карта парков Москвы" width="1807" height="803">
-
-        <span class="map__pin" style="--x: 45.0%; --y: 34.0%" data-district="Центральный" data-interest="Культура"></span>
-        <span class="map__pin" style="--x: 47.0%; --y: 35.2%" data-district="Центральный" data-interest="Семейный отдых"></span>
-        <span class="map__pin" style="--x: 35.0%; --y: 38.0%" data-district="Северо-Западный" data-interest="Спорт и активный отдых"></span>
-        <span class="map__pin" style="--x: 32.0%; --y: 40.5%" data-district="Северо-Западный" data-interest="Природно-исторический парк"></span>
-        <span class="map__pin" style="--x: 36.0%; --y: 40.5%" data-district="Северный" data-interest="Детский отдых"></span>
-        <span class="map__pin" style="--x: 40.0%; --y: 40.5%" data-district="Северный" data-interest="Культура"></span>
-        <span class="map__pin" style="--x: 65.5%; --y: 35.8%" data-district="Восточный" data-interest="Семейный отдых" data-count="2"></span>
-        <span class="map__pin" style="--x: 71.0%; --y: 39.3%" data-district="Восточный" data-interest="Культура"></span>
-        <span class="map__pin" style="--x: 73.0%; --y: 39.8%" data-district="Восточный" data-interest="Детский отдых"></span>
-        <span class="map__pin" style="--x: 71.5%; --y: 41.8%" data-district="Юго-Восточный" data-interest="Спорт и активный отдых"></span>
-        <span class="map__pin" style="--x: 31.5%; --y: 42.8%" data-district="Северо-Западный" data-interest="Культура"></span>
-        <span class="map__pin" style="--x: 40.5%; --y: 42.9%" data-district="Северный" data-interest="Семейный отдых"></span>
-        <span class="map__pin" style="--x: 53.0%; --y: 43.4%" data-district="Центральный" data-interest="Природно-исторический парк"></span>
-        <span class="map__pin" style="--x: 48.0%; --y: 45.5%" data-district="Южный" data-interest="Детский отдых"></span>
-        <span class="map__pin" style="--x: 55.0%; --y: 46.2%" data-district="Южный" data-interest="Семейный отдых" data-count="4"></span>
-        <span class="map__pin" style="--x: 48.0%; --y: 48.2%" data-district="Юго-Западный" data-interest="Культура"></span>
-        <span class="map__pin" style="--x: 56.0%; --y: 48.6%" data-district="Юго-Восточный" data-interest="Спорт и активный отдых"></span>
-        <span class="map__pin" style="--x: 28.5%; --y: 50.0%" data-district="Западный" data-interest="Природно-исторический парк"></span>
-        <span class="map__pin" style="--x: 52.5%; --y: 50.5%" data-district="Южный" data-interest="Детский отдых"></span>
-        <span class="map__pin" style="--x: 26.5%; --y: 53.5%" data-district="Западный" data-interest="Культура"></span>
-        <span class="map__pin" style="--x: 47.0%; --y: 55.0%" data-district="Юго-Западный" data-interest="Спорт и активный отдых"></span>
-        <span class="map__pin" style="--x: 31.5%; --y: 56.0%" data-district="Западный" data-interest="Семейный отдых"></span>
-        <span class="map__pin" style="--x: 55.0%; --y: 57.3%" data-district="Юго-Восточный" data-interest="Культура"></span>
-        <span class="map__pin" style="--x: 60.5%; --y: 63.8%" data-district="Новомосковский" data-interest="Природно-исторический парк"></span>
-      </div>
-
-
-      <img class="map__copyright" src="/src/assets/images/map/logo-yandex-maps.svg" alt="Яндекс Карты" width="90" height="20">
-    </div>
+  <div class="container container-map">
+    {{> map-panel}}
+    {{> map-view}}
   </div>
 </section>

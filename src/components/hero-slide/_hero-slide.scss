@@ -1,0 +1,52 @@
+// Блок: hero-slide — слайд первого экрана (разметка лежит в hero-slider).
+// Колонка, прижатая к низу: 40px до панели, 56px панель и 60px до кнопки
+.hero-slide {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 120px 156px;
+    overflow: hidden; // фото больше слайда — не даём ему залезать на соседний
+    color: #fff;
+
+    // Затемнение по краям, как в макете: синяя виньетка в режиме «умножение»
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -77px -120px -132px -119px; // та же область, что у фото
+        z-index: -1;
+        background: radial-gradient(960px 393px at 50% 41%, rgba(68, 124, 154, 0) 49%, rgb(68, 124, 154) 100%);
+        mix-blend-mode: multiply;
+        pointer-events: none;
+    }
+
+    // Фото в макете крупнее рамки (1919×949) и сдвинуто: выходит за неё
+    // на 119px слева и 77px сверху — лишнее срезает маска
+    &__image {
+        position: absolute;
+        inset: -77px -120px -132px -119px;
+        z-index: -2;
+        width: calc(100% + 239px);
+        height: calc(100% + 209px);
+        max-width: none;
+        object-fit: cover;
+    }
+
+    &__title {
+        font-size: 88px;
+        font-weight: 500;
+        line-height: 82px;
+    }
+
+    &__text {
+        margin-top: 32px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    &__button {
+        margin-top: 60px;
+    }
+}

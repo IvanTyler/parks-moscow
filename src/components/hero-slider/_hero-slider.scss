@@ -1,0 +1,7 @@
+// Блок: hero-slider — слайдер первого экрана в фигурной рамке.
+// Форма из макета накладывается маской, поэтому по краям ничего не обрезаем
+.hero-slider {
+    position: relative;
+    height: 740px;
+    mask: url('/src/assets/images/hero/hero-mask.svg') no-repeat 0 0 / 100% 100%;
+}

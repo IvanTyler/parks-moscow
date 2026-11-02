@@ -1,0 +1,8 @@
+// Блок: subscribe-inner — колонка содержимого карточки подписки.
+// Заголовок с подписью и форма стоят друг под другом через 40px макета
+
+.subscribe-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}

@@ -1,0 +1,15 @@
+// Блок: journals-controls — строка управления: стрелки слайдера и «Все статьи».
+// Правила переехали сюда из родительского блока journals
+
+.journals-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+
+    // Две стрелки слайдера: шаг 16, как в группе «Навигация партнеров»
+    &__nav {
+        display: flex;
+        gap: 16px;
+    }
+}

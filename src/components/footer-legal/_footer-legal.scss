@@ -1,0 +1,34 @@
+@use '../../styles/variables' as *;
+
+// Блок: footer-legal — правовая строка подвала: © слева, соцсети по центру,
+// «Сделано» справа. Боковым частям отдаём по равной доле — тогда соцсети
+// встают ровно по центру
+.footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &__copyright,
+    &__made {
+        flex: 1 1 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+
+    &__copyright {
+        color: $color-black;
+    }
+
+    &__made {
+        color: $color-primary;
+        text-align: right;
+    }
+
+    // Соцсети — компонент social-link, здесь только шаг между иконками
+    &__socials {
+        display: flex;
+        flex: none;
+        gap: 24px;
+    }
+}

@@ -1,0 +1,23 @@
+@use '../../styles/variables' as *;
+
+// Блок: map-panel — панель фильтров (макет 05_Map): 634 × 912,
+// паддинг 60/80/80/80, между заголовком и блоком фильтров 72.
+// Декор — серпантин фоном: края панели его обрезают, кликам он не мешает
+.map-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    padding: 60px 80px 80px;
+    background-color: $color-line;
+    background-image: url('/src/assets/images/map/map-filter-decor.svg');
+    background-repeat: no-repeat;
+    background-position: 220px 417px;
+    background-size: 540px auto;
+
+    &__title {
+        color: $color-primary;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 54px;
+    }
+}

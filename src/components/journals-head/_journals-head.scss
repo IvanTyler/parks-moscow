@@ -1,0 +1,23 @@
+// Блок: journals-head — шапка «Онлайн-журналов»: заголовок слева, подзаголовок справа.
+// Правила переехали сюда из родительского блока journals
+
+.journals-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+
+    &__title {
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 82px;
+    }
+
+    // Подзаголовок 24/28 прижат вправо и поднят на 10px от нижнего края строки
+    &__subtitle {
+        padding-bottom: 10px;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: right;
+    }
+}

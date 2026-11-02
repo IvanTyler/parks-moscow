@@ -1,47 +1,15 @@
-﻿@use '../../styles/variables' as *;
+@use '../../styles/variables' as *;
 
 // Блок: news — «Кстати, у нас новости»
 .news {
     padding: 36px 0 80px;
 }
 
-// Шапка блока: заголовок слева, ссылка «Все новости» справа
-.news__head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 30px;
-}
-
-.news__title {
-    font-size: 72px;
-    font-weight: 500;
-    line-height: 82px;
-}
-
-// Ссылка со стрелкой: стрелка — маска, цвет берётся из color
-.news__all {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: $color-primary;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 22px;
-
-    &::after {
-        content: '';
-        width: 24px;
-        height: 24px;
-        background-color: currentColor;
-        mask: url('/src/assets/icons/hero/arrow-long-right.svg') center / 20px no-repeat;
-        transition: transform 0.2s;
-    }
-
-    &:hover::after {
-        transform: translateX(4px);
-    }
+// Контейнер секции: шапка (блок news-head) и сетка карточек друг под другом.
+// Отдельной внутренней обёртки больше нет — раскладка переехала сюда
+.container-news {
+    display: grid;
+    row-gap: 30px;
 }
 
 // Сетка карточек: те же 4 колонки по 25%, что и в афише

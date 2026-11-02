@@ -1,27 +1,13 @@
-<!-- Блок: header -->
+<!-- Блок: header — шапка с верхней строкой (радио, подкасты, поиск, слабовидящие)
+     и нижней (логотип и меню). Медиа и поиск — отдельные блоки header-media и header-search. -->
 <header class="header">
   <div class="container container-header">
     <!-- Верхняя строка: радио, подкасты, поиск, версия для слабовидящих -->
     <div class="header-top">
-      <div class="header-top__media">
-        <button class="header-top__media-item" type="button">
-          <span class="header-top__play">
-            <img src="/src/assets/icons/header/play.svg" alt="" width="24" height="24">
-          </span>
-          Радио Парки
-        </button>
-        <button class="header-top__media-item" type="button">
-          <span class="header-top__play">
-            <img src="/src/assets/icons/header/play.svg" alt="" width="24" height="24">
-          </span>
-          Подкасты
-        </button>
-      </div>
+      {{> header-media}}
 
-      <form class="header-top__search" role="search" action="#">
-        <label class="visually-hidden" for="header-search">Поиск по сайту</label>
-        <input class="header-top__search-input" id="header-search" type="search" name="q" placeholder="Поиск по сайту">
-      </form>
+      {{> header-search}}
+
       <button class="header-top__action" type="button">
         <img src="/src/assets/icons/header/show.svg" alt="" width="24" height="24">
         Версия для слабовидящих
@@ -35,6 +21,5 @@
       </a>
       {{> nav}}
     </div>
-
   </div>
 </header>

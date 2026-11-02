@@ -1,0 +1,27 @@
+@use '../../styles/variables' as *;
+
+// Блок: footer-card — тёмная карточка подвала (узел 1:7861): 1680 × 580,
+// фон — готовые SVG (силуэт с вырезом и узор). Цвет подложки не задаём,
+// иначе вырез перестанет просвечивать белым.
+// Здесь только поверхность и логотип: меню, почты и контакты — отдельные блоки
+.footer-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 80px 120px 80px 426px;
+    background-image: url('/src/assets/images/footer/footer-bg-pattern.svg'),
+        url('/src/assets/images/footer/footer-bg-shape.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    // Логотип стоит отдельно от колонок: 40 от краёв карточки
+    &__brand {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        display: block;
+        width: 130px;
+        height: 32px;
+    }
+}

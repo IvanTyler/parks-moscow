@@ -1,0 +1,53 @@
+@use '../../styles/variables' as *;
+
+// Блок: map-filters — фильтры карты (макет 05_Map): селект и группы чипсов.
+// Шаг между частями 48 из макета
+.map-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    // Группа: подпись и чипсы, шаг 16
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    // Выбор парка: 56 высотой, капсом, линия снизу и стрелка справа.
+    // Стрелка стоит в потоке и прижата вправо — без absolute
+    &__select {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 56px;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba($color-primary, 0.25);
+        color: $color-primary;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: left;
+        text-transform: uppercase;
+
+        &::after {
+            content: '';
+            flex: none;
+            width: 24px;
+            height: 24px;
+            margin-left: auto;
+            background-color: currentColor;
+            mask: url('/src/assets/icons/events/arrow-down.svg') center / 24px no-repeat;
+        }
+    }
+
+    // Подписи групп: 12/14 капсом, чёрные. padding 1px — блок подписи 16px, как в макете
+    &__label {
+        padding: 1px 0;
+        color: $color-black;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        text-transform: uppercase;
+    }
+}

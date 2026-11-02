@@ -1,0 +1,28 @@
+// Блок: footer-contacts — телефон и адрес в подвале (узел 1:7861).
+// Колонка 362, подпись и значение с шагом 4
+.footer-contacts {
+    display: flex;
+    gap: 24px;
+
+    &__item {
+        display: flex;
+        flex: 0 0 362px;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__label {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        text-transform: uppercase;
+    }
+
+    &__value {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+}

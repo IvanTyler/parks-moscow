@@ -2,6 +2,8 @@
 
 // Блок: journals — «Новый выпуск журнала» (макет 07 / Онлайн-журналы).
 // Размеры взяты из Figma: секция 1:7685, обложка 1:7700, карточки 1:7701, кнопки 1:7705
+// Родительские элементы вынесены в отдельные блоки: journals-head, journals-body,
+// journals-materials, journals-slider, journals-controls
 
 // Контейнер секции — flex-колонка с шагом 32, как в авто-лейауте макета
 .container-journals {
@@ -21,76 +23,6 @@
 
     // Страховка: слайдер с длинной лентой слайдов не должен растягивать страницу
     overflow: hidden;
-
-    &__head {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 24px;
-    }
-
-    &__title {
-        font-size: 72px;
-        font-weight: 500;
-        line-height: 82px;
-    }
-
-    // Подзаголовок 24/28 прижат вправо и поднят на 10px от нижнего края строки
-    &__subtitle {
-        padding-bottom: 10px;
-        font-size: 24px;
-        line-height: 28px;
-        text-align: right;
-    }
-
-    &__body {
-        display: flex;
-        gap: 24px;
-        min-width: 0;
-    }
-
-    // Правая колонка: карточки сверху, строка управления у нижнего края обложки.
-    // 656 − 529 − 56 = 71px свободного шага — ровно как в макете (space-between)
-    &__materials {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: space-between;
-        min-width: 0;
-    }
-
-    &__slider {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-    // Карточки фиксированной ширины, как в макете.
-    // Ширину задаём и слайду, и самой карточке: Swiper с slidesPerView: 'auto'
-    // меряет слайд по содержимому, а без ширины карточка сжимается
-    &__slider .swiper-slide,
-    &__slider .event-card {
-        width: 402px;
-    }
-
-    // Высота карточки в макете фиксированная — 529. Минимум, а не жёсткая высота:
-    // на переносах заголовка карточка не должна обрезаться
-    &__slider .event-card {
-        min-height: 529px;
-    }
-
-    &__controls {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 24px;
-    }
-
-    // Две стрелки слайдера: шаг 16, как в группе «Навигация партнеров»
-    &__nav {
-        display: flex;
-        gap: 16px;
-    }
 }
 
 // Обложка выпуска: внешний блок задаёт размеры, внутренний слой обрезается маской

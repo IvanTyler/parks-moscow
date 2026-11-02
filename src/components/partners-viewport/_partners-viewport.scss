@@ -1,0 +1,21 @@
+// Блок: partners-viewport — лента логотипов партнёров.
+// Лента листается по кругу: вторая копия ячеек добавляется скриптом.
+// scroll-behavior здесь не задаём: возврат в начало должен быть мгновенным,
+// плавность включается точечно из JS через behavior: 'smooth'
+.partners-viewport {
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    // Пока тянут мышью — снап выключен, иначе браузер дёргает ленту под курсором
+    &--dragging {
+        cursor: grabbing;
+        scroll-snap-type: none;
+        user-select: none;
+    }
+}

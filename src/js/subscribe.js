@@ -1,33 +1,34 @@
 // Блок: subscribe — простая проверка e-mail в форме подписки.
 // Без плагинов: регулярка + своё сообщение, нативный пузырь браузера отключён
 // атрибутом novalidate в разметке, чтобы вид ошибки совпадал с дизайном.
+// Классы плоские: subscribe-form, subscribe-field-input, subscribe-field-error.
 //
 // Открытое событие:
 //   subscribe:subscribed — письмо прошло проверку, detail = { email }
 const EMAIL = /^[^\s@]+@[^\s@]+\.[a-zA-Zа-яА-Я]{2,}$/;
 
 export const initSubscribe = () => {
-    const form = document.querySelector('.subscribe__form');
+    const form = document.querySelector('.subscribe-form');
     if (!form) return null;
 
-    const input = form.querySelector('.subscribe__input');
-    const error = form.querySelector('.subscribe__error');
+    const input = form.querySelector('.subscribe-field__input');
+    const error = form.querySelector('.subscribe-field__error');
     if (!input || !error) return null;
 
     const showError = (message) => {
         error.textContent = message;
-        error.classList.remove('subscribe__error--success');
+        error.classList.remove('subscribe-field__error--success');
         error.hidden = false;
         input.setAttribute('aria-invalid', 'true');
-        form.classList.add('subscribe__form--invalid');
+        form.classList.add('subscribe-form--invalid');
     };
 
     const clearError = () => {
         error.hidden = true;
         error.textContent = '';
-        error.classList.remove('subscribe__error--success');
+        error.classList.remove('subscribe-field__error--success');
         input.removeAttribute('aria-invalid');
-        form.classList.remove('subscribe__form--invalid');
+        form.classList.remove('subscribe-form--invalid');
     };
 
     const validate = () => {
@@ -67,7 +68,7 @@ export const initSubscribe = () => {
         form.reset();
 
         error.textContent = 'Готово: письма будут приходить на этот адрес';
-        error.classList.add('subscribe__error--success');
+        error.classList.add('subscribe-field__error--success');
         error.hidden = false;
 
         // Отправку на сервер подключим вместе с бэкендом — сейчас только подтверждение

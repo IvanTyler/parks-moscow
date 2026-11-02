@@ -42,3 +42,45 @@ main {
     white-space: nowrap;
     border: 0;
 }
+
+// Ссылка «к содержанию»: скрыта, пока в неё не попали табуляцией.
+// Нужна, чтобы с клавиатуры можно было проскочить шапку и меню
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 100;
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: $color-primary;
+    transform: translateY(-200%);
+    transition: transform 0.15s;
+
+    &:focus-visible {
+        transform: translateY(0);
+    }
+}
+
+// Фокус с клавиатуры виден всегда и везде: своё кольцо вместо дефолтного,
+// которое на тёмных фото и зелёных панелях теряется.
+// У элементов с собственной заливкой кольцо красится в currentColor
+:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
+}
+
+// Отключаем анимации тем, кто просил об этом в настройках системы:
+// автопрокрутка hero и переходы слайдеров останавливаются (см. src/js/hero.js)
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

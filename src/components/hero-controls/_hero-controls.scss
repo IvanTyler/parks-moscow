@@ -1,0 +1,45 @@
+// Блок: hero-controls — панель управления поверх слайдов, внизу
+.hero-controls {
+    position: absolute;
+    right: 120px;
+    bottom: 40px;
+    left: 120px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+
+    // Полоска автопрокрутки: ширину заливки задаёт JS через --progress (0…1)
+    &__progress {
+        position: relative;
+        flex: 1;
+        height: 1px;
+        margin-right: 8px; // 16 gap + 8 = 24px до счётчика, как в макете
+        background-color: rgba(217, 217, 217, 0.2);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(var(--progress, 0) * 100%);
+            height: 100%;
+            background-color: #fff;
+        }
+    }
+
+    // Счётчик «01 — 02»
+    &__counter {
+        width: 78px;
+        padding-right: 12px;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: right;
+        white-space: pre;
+    }
+
+    &__counter-total {
+        color: rgba(255, 255, 255, 0.4);
+    }
+}

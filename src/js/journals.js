@@ -1,7 +1,8 @@
 import Swiper from 'swiper';
 import { Navigation, Keyboard, A11y } from 'swiper/modules';
 
-// Блок: journals — слайдер статей. Две карточки в ряд, шаг 24.
+// Блок: journals-slider — слайдер статей. Две карточки в ряд, шаг 24.
+// Стрелки листания живут в блоке journals-controls (journals-controls-prev/next).
 //
 // Открытые события (чтобы программист заказчика цеплялся без доступа внутрь):
 //   journals:ready        — слайдер инициализирован, detail = { total, realIndex }
@@ -9,7 +10,7 @@ import { Navigation, Keyboard, A11y } from 'swiper/modules';
 // Слушать: document.addEventListener('journals:slide-change', (e) => e.detail)
 // initJournals возвращает экземпляр Swiper — можно дёрнуть swiper.slideTo(n) руками.
 export const initJournals = () => {
-    const element = document.querySelector('.journals__slider');
+    const element = document.querySelector('.journals-slider');
     if (!element) return null;
 
     const section = element.closest('.journals');
@@ -39,8 +40,8 @@ export const initJournals = () => {
         resizeObserver: true,
         keyboard: { enabled: true },
         navigation: {
-            prevEl: section ? section.querySelector('.journals__prev') : null,
-            nextEl: section ? section.querySelector('.journals__next') : null,
+            prevEl: section ? section.querySelector('.journals-controls__prev') : null,
+            nextEl: section ? section.querySelector('.journals-controls__next') : null,
         },
         a11y: {
             prevSlideMessage: 'Предыдущие статьи',

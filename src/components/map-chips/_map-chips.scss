@@ -1,0 +1,36 @@
+@use '../../styles/variables' as *;
+
+// Блок: map-chips — чипсы-фильтры в панели карты.
+// 48 высотой и шаг 8: в макете это 4 ряда по 216 и 3 по 160.
+// Разметка лежит в map-panel: элементы — данные, их 17, отдельный партиал не нужен
+.map-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    // Пункт списка: класс есть у каждого li, как в остальных блоках
+    &__item {
+        display: flex;
+    }
+
+    &__button {
+        height: 48px;
+        padding: 0 20px;
+        border-radius: 24px;
+        color: $color-primary;
+        font-size: 14px;
+        line-height: 20px;
+        white-space: nowrap;
+        background-color: #fff;
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+            background-color: #eef4f2;
+        }
+
+        &.is-active {
+            color: #fff;
+            background-color: $color-primary;
+        }
+    }
+}

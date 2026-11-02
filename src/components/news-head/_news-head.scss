@@ -1,0 +1,39 @@
+@use '../../styles/variables' as *;
+
+// Блок: news-head — шапка новостей: заголовок слева, ссылка «Все новости» справа
+.news-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    &__title {
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 82px;
+    }
+
+    // Ссылка со стрелкой: стрелка — маска, цвет берётся из color
+    &__all {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $color-primary;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+
+        &::after {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background-color: currentColor;
+            mask: url('/src/assets/icons/hero/arrow-long-right.svg') center / 20px no-repeat;
+            transition: transform 0.2s;
+        }
+
+        &:hover::after {
+            transform: translateX(4px);
+        }
+    }
+}

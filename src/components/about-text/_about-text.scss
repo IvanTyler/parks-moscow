@@ -1,0 +1,26 @@
+// Блок: about-text — левая колонка «Парки Москвы» (узел 1:7710): 828 шириной,
+// отступы 120/92/120/0. Обёрток внутри нет — шаг между частями дают отступы
+.about-text {
+    display: flex;
+    flex-direction: column;
+    padding: 120px 92px 120px 0;
+
+    &__title {
+        margin-bottom: 32px;
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 82px;
+    }
+
+    &__desc {
+        margin-bottom: 48px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    // Кнопки стоят рядом: 216 + 16 + 207 = 439, прижаты влево
+    &__buttons {
+        display: flex;
+        gap: 16px;
+    }
+}

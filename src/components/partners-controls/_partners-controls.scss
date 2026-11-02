@@ -1,0 +1,13 @@
+// Блок: partners-controls — строка управления лентой партнёров:
+// стрелки слева, «Все партнеры» справа — по краям строки 1680
+.partners-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    &__nav {
+        display: flex;
+        gap: 16px;
+    }
+}

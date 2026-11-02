@@ -1,0 +1,25 @@
+{{!-- Блок: hero-slider — слайдер первого экрана в фигурной рамке.
+     Слайды — блоки hero-slide, панель управления — hero-controls.
+     Разметка слайдов лежит здесь, а не в hero-slide: их всего два и они различаются
+     только текстом, отдельный партиал добавил бы файл без пользы. --}}
+<div class="hero-slider swiper">
+  <div class="swiper-wrapper">
+
+    <article class="hero-slide swiper-slide">
+      <img class="hero-slide__image" src="/src/assets/images/hero/hero-poster.webp" alt="" width="1920" height="1080">
+      <h1 class="hero-slide__title">Новая<br>городская привычка</h1>
+      <p class="hero-slide__text">Вместе создаем пространства для жизни,<br>вдохновения и общения</p>
+      {{> button text="Открыть осеннюю афишу" href="#" modifier="button--glass hero-slide__button"}}
+    </article>
+
+    <article class="hero-slide swiper-slide">
+      <img class="hero-slide__image" src="/src/assets/images/hero/hero-poster.webp" alt="" width="1920" height="1080">
+      <h2 class="hero-slide__title">Новая<br>городская привычка 2</h2>
+      <p class="hero-slide__text">Вместе создаем пространства для жизни,<br>вдохновения и общения 2</p>
+      {{> button text="Открыть осеннюю афишу 2" href="#" modifier="button--glass hero-slide__button"}}
+    </article>
+
+  </div>
+
+  {{> hero-controls}}
+</div>

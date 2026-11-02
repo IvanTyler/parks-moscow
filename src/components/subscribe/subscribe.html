@@ -1,19 +1,21 @@
 {{!-- Компонент: subscribe — карточка подписки на рассылку.
-     828 × 480, белая, с формой. Проверку e-mail делает src/js/subscribe.js;
-     нативный пузырь браузера отключён novalidate, чтобы вид ошибки совпадал с макетом. --}}
+     828 × 480, белая, с формой. Внутри самостоятельные блоки subscribe-inner,
+     subscribe-texts, subscribe-form и subscribe-field.
+     Проверку e-mail делает src/js/subscribe.js; нативный пузырь браузера
+     отключён novalidate, чтобы вид ошибки совпадал с макетом. --}}
 <aside class="subscribe">
-  <div class="subscribe__inner">
-    <div class="subscribe__texts">
-      <h3 class="subscribe__title">Планы на выходные —<br>в вашей почте</h3>
-      <p class="subscribe__text">Новости парков, интересные события и новые маршруты</p>
+  <div class="subscribe-inner">
+    <div class="subscribe-texts">
+      <h3 class="subscribe-texts__title">Планы на выходные —<br>в вашей почте</h3>
+      <p class="subscribe-texts__text">Новости парков, интересные события и новые маршруты</p>
     </div>
-    <form class="subscribe__form" action="#" method="post" novalidate>
-      <div class="subscribe__field">
+    <form class="subscribe-form" action="#" method="post" novalidate>
+      <div class="subscribe-field">
         <label class="visually-hidden" for="subscribe-email">Ваш e-mail</label>
-        <input class="subscribe__input" id="subscribe-email" type="email" name="email" placeholder="Ваш e-mail" autocomplete="email" aria-describedby="subscribe-email-error" required>
-        <p class="subscribe__error" id="subscribe-email-error" role="alert" hidden></p>
+        <input class="subscribe-field__input" id="subscribe-email" type="email" name="email" placeholder="Ваш e-mail" autocomplete="email" aria-describedby="subscribe-email-error" required>
+        <p class="subscribe-field__error" id="subscribe-email-error" role="alert" hidden></p>
       </div>
-      <button class="button button--filled subscribe__submit" type="submit">Подписаться</button>
+      <button class="button button--filled subscribe-form__submit" type="submit">Подписаться</button>
     </form>
   </div>
 </aside>

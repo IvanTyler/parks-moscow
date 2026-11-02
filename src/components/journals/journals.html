@@ -2,33 +2,35 @@
      Секция 870px: отступ сверху 100, шаг 32, фон — градиент к #f6f8f7.
      Слева обложка выпуска 828 × 656, справа колонка: слайдер статей + строка управления.
      Слайдер листается по две карточки; наружу отдаёт события journals:ready и
-     journals:slide-change (см. src/js/journals.js) -->
+     journals:slide-change (см. src/js/journals.js).
+     Родительские элементы вынесены в отдельные блоки: journals-head, journals-body,
+     journals-materials, journals-slider, journals-controls -->
 <section class="journals">
   <div class="container container-journals">
-    <div class="journals__head">
-      <h2 class="journals__title">Новый выпуск журнала</h2>
-      <p class="journals__subtitle">Истории парков, маршруты, интервью с горожанами<br>и новые городские привычки — в каждом выпуске</p>
+    <div class="journals-head">
+      <h2 class="journals-head__title">Новый выпуск журнала</h2>
+      <p class="journals-head__subtitle">Истории парков, маршруты, интервью с горожанами<br>и новые городские привычки — в каждом выпуске</p>
     </div>
 
-    <div class="journals__body">
+    <div class="journals-body">
       <!-- Обложка выпуска: силуэт обрезается маской, узор, фото и логотип лежат внутри маски,
            метка выпуска — снаружи, чтобы её не срезало вырезом силуэта -->
       <article class="journal-cover">
         <div class="journal-cover__inner">
-          <img class="journal-cover__image" src="/src/assets/images/journals/journal-cover.png" alt="Обложка журнала «Парки Москвы», осень 2026" width="458" height="654" loading="lazy">
+          <img class="journal-cover__image" src="/src/assets/images/journals/journal-cover.webp" alt="Обложка журнала «Парки Москвы», осень 2026" width="458" height="654" loading="lazy">
           <span class="journal-cover__label">Журнал</span>
           <img class="journal-cover__logo" src="/src/assets/images/journals/logo-journal.svg" alt="Парки Москвы" width="173" height="48">
         </div>
         <span class="journal-cover__tag">Осень 2026</span>
       </article>
 
-      <div class="journals__materials">
-        <div class="journals__slider swiper">
+      <div class="journals-materials">
+        <div class="journals-slider swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
             {{#> event-card
                 href="#"
-                image="/src/assets/images/journals/herbarium-diy.png"
+                image="/src/assets/images/journals/herbarium-diy.webp"
                 category="Статьи"
                 park="5 парков"
                 title="Осенний гербарий своими руками"
@@ -44,7 +46,7 @@
             <div class="swiper-slide">
             {{#> event-card
                 href="#"
-                image="/src/assets/images/journals/golden-autumn-routes.png"
+                image="/src/assets/images/journals/golden-autumn-routes.webp"
                 category="Статьи"
                 park="Коробковский сад"
                 title="Золотая осень: 5 маршрутов<br>по паркам Москвы"
@@ -60,7 +62,7 @@
             <div class="swiper-slide">
             {{#> event-card
                 href="#"
-                image="/src/assets/images/journals/herbarium-diy.png"
+                image="/src/assets/images/journals/herbarium-diy.webp"
                 category="Статьи"
                 park="Парк «Красная Пресня»"
                 title="Как устроен парк осенью: гид по аллеям"
@@ -75,7 +77,7 @@
             <div class="swiper-slide">
             {{#> event-card
                 href="#"
-                image="/src/assets/images/journals/golden-autumn-routes.png"
+                image="/src/assets/images/journals/golden-autumn-routes.webp"
                 category="Статьи"
                 park="Парк Горького"
                 title="Что почитать об осенних парках"
@@ -89,10 +91,10 @@
           </div>
         </div>
 
-        <div class="journals__controls">
-          <div class="journals__nav">
-            <button class="button button--light button--icon button--prev journals__prev" type="button" aria-label="Предыдущие статьи"></button>
-            <button class="button button--light button--icon button--next journals__next" type="button" aria-label="Следующие статьи"></button>
+        <div class="journals-controls">
+          <div class="journals-controls__nav">
+            <button class="button button--light button--icon button--prev journals-controls__prev" type="button" aria-label="Предыдущие статьи"></button>
+            <button class="button button--light button--icon button--next journals-controls__next" type="button" aria-label="Следующие статьи"></button>
           </div>
           {{> button text="Все статьи" href="#" modifier="button--light button--arrow"}}
         </div>

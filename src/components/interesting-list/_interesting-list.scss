@@ -1,0 +1,48 @@
+@use '../../styles/variables' as *;
+
+// Блок: interesting-list — ряд карточек «В центре внимания».
+// Карточки в одну строку, не сжимаются и уходят за правый край экрана;
+// внутри ряда остаются самостоятельные блоки feature-card, их стили не менялись
+.interesting-list {
+    grid-area: list;
+    display: flex;
+    gap: 16.5px;
+
+    .feature-card {
+        flex-shrink: 0;
+
+        // Нечётные: наклон 8° влево, узор в одном положении
+        &:nth-child(odd) {
+            --pattern-x: 340px;
+            --pattern-y: -212px;
+            transform: rotate(-8deg);
+        }
+
+        // Чётные: наклон 4° вправо, чуть ниже, узор в другом положении
+        &:nth-child(even) {
+            --pattern-x: 560px;
+            --pattern-y: -244px;
+            transform: translateY(51px) rotate(4deg);
+        }
+
+        // Цвета карточек по порядку, из палитры макета
+        &:nth-child(1) { --card-bg: #1eb9cb; }
+        &:nth-child(2) { --card-bg: #b78bff; }
+        &:nth-child(3) { --card-bg: #{$color-primary}; }
+        &:nth-child(4) { --card-bg: #ff871c; }
+
+        // На жёлтом фоне белый текст не читается — тёмно-зелёный, как в макете
+        &:nth-child(5) {
+            --card-bg: #ffc507;
+            --pattern-opacity: 0.07;
+            color: $color-primary;
+        }
+
+        &:nth-child(6) {
+            --card-bg: #008e1c;
+            --pattern-opacity: 0.07;
+        }
+
+        &:nth-child(7) { --card-bg: #{$color-primary}; }
+    }
+}

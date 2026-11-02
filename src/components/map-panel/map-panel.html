@@ -1,0 +1,41 @@
+{{!-- Блок: map-panel — панель фильтров «Выберем ваш Парк Москвы?».
+     634 × 912, паддинг 60/80/80/80, между заголовком и фильтрами 72.
+     Фильтры — самостоятельный блок map-filters. --}}
+<div class="map-panel">
+  <h2 class="map-panel__title">Выберем<br>ваш Парк Москвы?</h2>
+
+  <div class="map-filters">
+    <button class="map-filters__select" type="button" data-map-reset>
+      Все парки Москвы
+    </button>
+
+    <div class="map-filters__group">
+      <p class="map-filters__label">Округа</p>
+      <ul class="map-chips" data-map-districts>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Центральный">Центральный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Северный">Северный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Северо-Восточный">Северо-Восточный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Восточный">Восточный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Юго-Восточный">Юго-Восточный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Южный">Южный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Юго-Западный">Юго-Западный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Западный">Западный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Северо-Западный">Северо-Западный</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Зеленоградский">Зеленоградский</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Троицкий">Троицкий</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-district="Новомосковский">Новомосковский</button></li>
+      </ul>
+    </div>
+
+    <div class="map-filters__group">
+      <p class="map-filters__label">Интересы</p>
+      <ul class="map-chips" data-map-interests>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Культура">Культура</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Семейный отдых">Семейный отдых</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Спорт и активный отдых">Спорт и активный отдых</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Детский отдых">Детский отдых</button></li>
+        <li class="map-chips__item"><button class="map-chips__button" type="button" data-interest="Природно-исторический парк">Природно-исторический парк</button></li>
+      </ul>
+    </div>
+  </div>
+</div>

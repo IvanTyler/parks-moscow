@@ -1,11 +1,11 @@
 // Блок: map — фильтры по округам и интересам.
-// Метки скрываются, если не подходят ни под один выбранный фильтр.
+// Метки (блок map-canvas) скрываются, если не подходят ни под один выбранный фильтр.
 
 export const initMap = () => {
     const section = document.querySelector('.map');
     if (!section) return;
 
-    const pins = Array.from(section.querySelectorAll('.map__pin'));
+    const pins = Array.from(section.querySelectorAll('.map-canvas__pin'));
     const districts = Array.from(section.querySelectorAll('.map-chips__button[data-district]'));
     const interests = Array.from(section.querySelectorAll('.map-chips__button[data-interest]'));
     const resetButton = section.querySelector('[data-map-reset]');

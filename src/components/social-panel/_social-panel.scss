@@ -1,0 +1,30 @@
+@use '../../styles/variables' as *;
+
+// Блок: social-panel — зелёная панель «Мы всегда рядом» (узел 1:7710):
+// 828 × 626, фон готовым SVG (силуэт с вырезом + узор), отступы 120/60.
+// Ширину задаёт раскладка страницы, у блока её нет
+.social-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 626px;
+    padding: 120px 60px;
+    background-color: $color-journal;
+    background-image: url('/src/assets/images/about/about-card-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &__title {
+        color: #fff;
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 82px;
+    }
+
+    // Плашки в две строки: сами переносятся, как только не влезают в 708
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}

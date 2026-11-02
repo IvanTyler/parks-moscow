@@ -28,7 +28,7 @@
 }
 
 // Верхняя строка — одна линия элементов, поэтому flex.
-// Левая группа (радио + подкасты) занимает всё свободное место и прижимает кнопки вправо
+// Медиа (header-media) занимает свободное место и прижимает кнопки вправо
 .header-top {
     display: flex;
     align-items: center;
@@ -47,51 +47,6 @@
         left: 24px;
         height: 1px;
         background-color: $color-line;
-    }
-
-    &__media {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        gap: 36px;
-    }
-
-    &__media-item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 22px;
-        color: $color-gray;
-    }
-
-    &__play {
-        display: flex;
-        padding: 8px;
-        border-radius: 100px;
-    }
-
-    // Поиск: иконка лупы — фоном поля, слева; текст начинается после неё
-    &__search-input {
-        width: 210px; // с запасом: у type="search" справа место под крестик очистки
-        padding: 16px 24px 16px 54px;
-        border: none;
-        border-radius: 16px;
-        background: url('/src/assets/icons/header/search.svg') no-repeat 22px center / 24px 24px;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 22px;
-        color: $color-black;
-        outline: none;
-
-        &::placeholder {
-            color: $color-gray;
-        }
-
-        &:focus {
-            background-color: $color-line;
-        }
     }
 
     &__action {

@@ -1,0 +1,30 @@
+// Блок: footer-menu — меню в подвале (узел 1:7861).
+// Живёт внутри footer-card, но принадлежит подвалу: колонка 351, шаг 36
+.footer-menu {
+    display: flex;
+    gap: 40px;
+}
+
+// Список — самостоятельный блок: у него своя колонка и свой ритм,
+// поэтому пункты и ссылки принадлежат уже ему, а не меню
+.footer-menu-list {
+    display: flex;
+    flex: 0 0 351px;
+    flex-direction: column;
+    gap: 36px;
+
+    &__item {
+        display: block;
+    }
+
+    &__link {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

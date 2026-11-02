@@ -1,0 +1,14 @@
+// Блок: footer-logos — строка логотипов ведомств в подвале.
+// Ячейка 263 × 160, шаг 20 — из макета (узел 1:7861)
+.footer-logos {
+    display: flex;
+    gap: 20px;
+
+    &__cell {
+        display: flex;
+        flex: 0 0 263px;
+        align-items: center;
+        justify-content: center;
+        height: 160px;
+    }
+}

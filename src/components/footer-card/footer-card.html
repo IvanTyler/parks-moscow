@@ -1,0 +1,14 @@
+{{!-- Блок: footer-card — тёмная карточка подвала: только поверхность и логотип.
+     1680 × 580, фон — готовые SVG из макета: силуэт с вырезом и узор.
+     Цвет подложки не задаём: вырез должен просвечивать белым.
+     Меню, почты и контакты — блоки уровня подвала (footer-menu, footer-emails,
+     footer-contacts), они лежат внутри, но элементами карточки не являются. --}}
+<div class="footer-card">
+  <a class="footer-card__brand" href="/" aria-label="Парки Москвы — на главную">
+    <img src="/src/assets/images/footer/logo-parki-moskvy-footer.svg" alt="Парки Москвы" width="130" height="32">
+  </a>
+
+  {{> footer-menu}}
+  {{> footer-emails}}
+  {{> footer-contacts}}
+</div>

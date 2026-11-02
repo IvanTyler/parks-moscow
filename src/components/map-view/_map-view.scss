@@ -1,0 +1,19 @@
+@use '../../styles/variables' as *;
+
+// Блок: map-view — область карты (макет 05_Map): 1088 × 768, на 124 ниже верха
+// панели. Подложка обрезается по контейнеру
+.map-view {
+    position: relative;
+    height: 768px;
+    margin-top: 70px;
+    overflow: hidden;
+
+    // Логотип Яндекса в правом нижнем углу
+    &__copyright {
+        position: absolute;
+        right: 16px;
+        bottom: 12px;
+        width: 90px;
+        height: auto;
+    }
+}

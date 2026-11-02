@@ -1,0 +1,35 @@
+{{!-- Блок: map-view — область карты 1088 × 768 с метками парков.
+     Метки — декоративные щиты: позиция задаётся переменными --x / --y в процентах.
+     Подложка и метки — самостоятельный блок map-canvas. --}}
+<div class="map-view">
+  <div class="map-canvas" data-map-canvas>
+    <img class="map-canvas__image" src="/src/assets/images/map/map-moscow.webp" alt="Карта парков Москвы" width="1807" height="803">
+
+    <span class="map-canvas__pin" style="--x: 45.0%; --y: 34.0%" data-district="Центральный" data-interest="Культура"></span>
+    <span class="map-canvas__pin" style="--x: 47.0%; --y: 35.2%" data-district="Центральный" data-interest="Семейный отдых"></span>
+    <span class="map-canvas__pin" style="--x: 35.0%; --y: 38.0%" data-district="Северо-Западный" data-interest="Спорт и активный отдых"></span>
+    <span class="map-canvas__pin" style="--x: 32.0%; --y: 40.5%" data-district="Северо-Западный" data-interest="Природно-исторический парк"></span>
+    <span class="map-canvas__pin" style="--x: 36.0%; --y: 40.5%" data-district="Северный" data-interest="Детский отдых"></span>
+    <span class="map-canvas__pin" style="--x: 40.0%; --y: 40.5%" data-district="Северный" data-interest="Культура"></span>
+    <span class="map-canvas__pin" style="--x: 65.5%; --y: 35.8%" data-district="Восточный" data-interest="Семейный отдых" data-count="2"></span>
+    <span class="map-canvas__pin" style="--x: 71.0%; --y: 39.3%" data-district="Восточный" data-interest="Культура"></span>
+    <span class="map-canvas__pin" style="--x: 73.0%; --y: 39.8%" data-district="Восточный" data-interest="Детский отдых"></span>
+    <span class="map-canvas__pin" style="--x: 71.5%; --y: 41.8%" data-district="Юго-Восточный" data-interest="Спорт и активный отдых"></span>
+    <span class="map-canvas__pin" style="--x: 31.5%; --y: 42.8%" data-district="Северо-Западный" data-interest="Культура"></span>
+    <span class="map-canvas__pin" style="--x: 40.5%; --y: 42.9%" data-district="Северный" data-interest="Семейный отдых"></span>
+    <span class="map-canvas__pin" style="--x: 53.0%; --y: 43.4%" data-district="Центральный" data-interest="Природно-исторический парк"></span>
+    <span class="map-canvas__pin" style="--x: 48.0%; --y: 45.5%" data-district="Южный" data-interest="Детский отдых"></span>
+    <span class="map-canvas__pin" style="--x: 55.0%; --y: 46.2%" data-district="Южный" data-interest="Семейный отдых" data-count="4"></span>
+    <span class="map-canvas__pin" style="--x: 48.0%; --y: 48.2%" data-district="Юго-Западный" data-interest="Культура"></span>
+    <span class="map-canvas__pin" style="--x: 56.0%; --y: 48.6%" data-district="Юго-Восточный" data-interest="Спорт и активный отдых"></span>
+    <span class="map-canvas__pin" style="--x: 28.5%; --y: 50.0%" data-district="Западный" data-interest="Природно-исторический парк"></span>
+    <span class="map-canvas__pin" style="--x: 52.5%; --y: 50.5%" data-district="Южный" data-interest="Детский отдых"></span>
+    <span class="map-canvas__pin" style="--x: 26.5%; --y: 53.5%" data-district="Западный" data-interest="Культура"></span>
+    <span class="map-canvas__pin" style="--x: 47.0%; --y: 55.0%" data-district="Юго-Западный" data-interest="Спорт и активный отдых"></span>
+    <span class="map-canvas__pin" style="--x: 31.5%; --y: 56.0%" data-district="Западный" data-interest="Семейный отдых"></span>
+    <span class="map-canvas__pin" style="--x: 55.0%; --y: 57.3%" data-district="Юго-Восточный" data-interest="Культура"></span>
+    <span class="map-canvas__pin" style="--x: 60.5%; --y: 63.8%" data-district="Новомосковский" data-interest="Природно-исторический парк"></span>
+  </div>
+
+  <img class="map-view__copyright" src="/src/assets/images/map/logo-yandex-maps.svg" alt="Яндекс Карты" width="90" height="20">
+</div>

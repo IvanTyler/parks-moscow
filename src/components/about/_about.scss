@@ -1,16 +1,21 @@
 @use '../../styles/variables' as *;
 
-// Блок: about — «Парки Москвы» и «Мы всегда рядом» (макет Hero Strip_2, узел 1:7710).
-// Секция 1232: 120 сверху, строка 626 из двух колонок по 828, карточка подписки
-// заезжает на -60 под зелёную панель, конверт — ещё на -60. Снизу отступа нет.
-
+// Блок: about — секция «Парки Москвы» и «Мы всегда рядом» (узел 1:7710).
+// 120 сверху, две колонки по 828 с шагом 24, карточка подписки и конверт
+// идут во всю ширину по центру с заездом -60. Снизу отступа нет.
+// Раскладку держит контейнер: обёрток-элементов в разметке нет
 .container-about {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 0;
 
-    // Место компонента подписки задаёт блок: по центру и с заездом под панель
-    > .subscribe {
-        align-self: center;
+    // Подписка и конверт — на всю ширину, по центру.
+    // Заезд -60 у каждого свой, поэтому строки не раздвигаем
+    > .subscribe,
+    > .about__mail {
+        grid-column: 1 / -1;
+        justify-self: center;
         margin-top: -60px;
     }
 }
@@ -19,76 +24,9 @@
     padding: 120px 0 0;
     background-color: $color-bg-soft;
 
-    &__body {
-        display: flex;
-        gap: 24px;
-    }
-
-    // Левая колонка: 120 сверху и снизу, 92 справа — текст получается 736
-    &__text {
-        display: flex;
-        flex: 0 0 828px;
-        flex-direction: column;
-        gap: 48px;
-        padding: 120px 92px 120px 0;
-    }
-
-    &__intro {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    &__title {
-        font-size: 72px;
-        font-weight: 500;
-        line-height: 82px;
-    }
-
-    &__desc {
-        font-size: 24px;
-        line-height: 28px;
-    }
-
-    // Кнопки стоят рядом: 216 + 16 + 207 = 439, прижаты влево
-    &__buttons {
-        display: flex;
-        gap: 16px;
-    }
-
-    // Правая колонка — зелёная панель с вырезом. Фон готовым SVG: силуэт + узор
-    &__social {
-        display: flex;
-        flex: 0 0 828px;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 626px;
-        padding: 120px 60px;
-        background-color: $color-journal;
-        background-image: url('/src/assets/images/about/about-card-bg.svg');
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-
-    &__social-title {
-        color: #fff;
-        font-size: 72px;
-        font-weight: 500;
-        line-height: 82px;
-    }
-
-    // Плашки в две строки: сами переносятся, как только не влезают в 708
-    &__links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    // Конверт 148 × 126, заезжает на 60 под карточку
+    // Конверт 148 × 126 под карточкой подписки
     &__mail {
-        align-self: center;
         width: 148px;
         height: 126px;
-        margin-top: -60px;
     }
 }

@@ -1,0 +1,11 @@
+// Блок: journals-materials — правая колонка: карточки сверху, строка управления
+// у нижнего края обложки. Правила переехали сюда из родительского блока journals.
+// 656 − 529 − 56 = 71px свободного шага — ровно как в макете (space-between)
+
+.journals-materials {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+}

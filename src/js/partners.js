@@ -15,10 +15,10 @@ export const initPartners = () => {
     const section = document.querySelector('.partners');
     if (!section) return null;
 
-    const viewport = section.querySelector('.partners__viewport');
-    const list = viewport ? viewport.querySelector('.partners__list') : null;
-    const prev = section.querySelector('.partners__prev');
-    const next = section.querySelector('.partners__next');
+    const viewport = section.querySelector('.partners-viewport');
+    const list = viewport ? viewport.querySelector('.partners-list') : null;
+    const prev = section.querySelector('.partners-controls__prev');
+    const next = section.querySelector('.partners-controls__next');
     if (!viewport || !list || !prev || !next) return null;
 
     const originals = [...list.children];
@@ -114,7 +114,7 @@ export const initPartners = () => {
         startLeft = viewport.scrollLeft;
         viewport.setPointerCapture(event.pointerId);
         // Пока тянем — снап выключаем, иначе браузер дёргает ленту под курсором
-        viewport.classList.add('partners__viewport--dragging');
+        viewport.classList.add('partners-viewport--dragging');
     });
 
     viewport.addEventListener('pointermove', (event) => {
@@ -129,7 +129,7 @@ export const initPartners = () => {
         if (!dragging) return;
 
         dragging = false;
-        viewport.classList.remove('partners__viewport--dragging');
+        viewport.classList.remove('partners-viewport--dragging');
         if (viewport.hasPointerCapture && viewport.hasPointerCapture(event.pointerId)) {
             viewport.releasePointerCapture(event.pointerId);
         }

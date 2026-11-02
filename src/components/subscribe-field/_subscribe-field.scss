@@ -1,0 +1,57 @@
+@use '../../styles/variables' as *;
+
+// Блок: subscribe-field — поле e-mail с сообщением об ошибке.
+// Ширина 441px зафиксирована макетом: кнопка стоит рядом на своей ширине.
+// Классы плоские: subscribe-field-input / subscribe-field-error
+
+.subscribe-field {
+    position: relative;
+    flex: 0 0 441px;
+
+    // Поле подчёркнуто только снизу, без рамки по бокам
+    &__input {
+        width: 441px;
+        height: 56px;
+        padding: 17px 0;
+        border: 0;
+        border-bottom: 1px solid $color-primary;
+        border-radius: 0;
+        color: $color-primary;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        background-color: transparent;
+
+        &::placeholder {
+            color: rgba(0, 14, 51, 0.3);
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom-color: $color-primary;
+            box-shadow: 0 1px 0 0 $color-primary;
+        }
+    }
+
+    // Ошибка красным под полем, успех — фирменным зелёным
+    &__error {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 8px;
+        color: $color-error;
+        font-size: 14px;
+        line-height: 18px;
+
+        &--success {
+            color: $color-primary;
+        }
+    }
+
+    // Пока форма не прошла проверку, поле подчёркнуто красным.
+    // Правило идёт после &__input:focus: при автофокусе на ошибке
+    // красная линия не должна сбрасываться на фирменную
+    .subscribe-form--invalid &__input {
+        border-bottom-color: $color-error;
+    }
+}

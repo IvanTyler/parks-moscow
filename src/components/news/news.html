@@ -1,16 +1,18 @@
 <!-- Блок: news — «Кстати, у нас новости».
-     Карточки те же, что в афише, поэтому используется компонент event-card -->
+     Карточки те же, что в афише, поэтому используется компонент event-card.
+     Шапка вынесена в блок news-head, отдельной обёртки внутри секции больше нет —
+     её раскладка переехала на .container-news -->
 <section class="news">
-  <div class="container news__inner">
-    <div class="news__head">
-      <h2 class="news__title">Кстати, у нас новости</h2>
-      <a class="news__all" href="#">Все новости</a>
+  <div class="container container-news">
+    <div class="news-head">
+      <h2 class="news-head__title">Кстати, у нас новости</h2>
+      <a class="news-head__all" href="#">Все новости</a>
     </div>
 
     <div class="news__grid">
       {{#> event-card
           href="#"
-          image="/src/assets/images/interesting/new-playgrounds.png"
+          image="/src/assets/images/interesting/new-playgrounds.webp"
           park="5 парков"
           title="В парках Москвы появились новые площадки для отдыха и активного досуга"
           text="Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе."
@@ -23,7 +25,7 @@
 
       {{#> event-card
           href="#"
-          image="/src/assets/images/news/autumn-season-opening.png"
+          image="/src/assets/images/news/autumn-season-opening.webp"
           park="5 парков"
           title="В парках Москвы открывается осенний сезон"
           text="Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе."
@@ -36,7 +38,7 @@
 
       {{#> event-card
           href="#"
-          image="/src/assets/images/news/concerts-and-workshops.png"
+          image="/src/assets/images/news/concerts-and-workshops.webp"
           park="5 парков"
           title="Осенние выходные: концерты и мастер-классы"
           text="Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе."
@@ -47,7 +49,7 @@
 
       {{#> event-card
           href="#"
-          image="/src/assets/images/news/family-autumn-holidays.png"
+          image="/src/assets/images/news/family-autumn-holidays.webp"
           park="Коробковский сад"
           title="Парки приглашают на семейные праздники осени"
           text="Здесь встречаются с друзьями, занимаются спортом, проводят время с семьёй и открывают новое. Мы помогаем найти парк, событие и занятие по душе."

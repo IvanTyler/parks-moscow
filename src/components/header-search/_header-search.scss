@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+
+// Блок: header-search — поиск по сайту в шапке
+.header-search {
+    display: flex;
+
+    &__label {
+        // подпись скрыта утилитой visually-hidden
+    }
+
+    // Иконка лупы — фоном поля слева, текст начинается после неё
+    &__input {
+        width: 210px; // с запасом: у type="search" справа место под крестик очистки
+        padding: 16px 24px 16px 54px;
+        border: none;
+        border-radius: 16px;
+        background: url('/src/assets/icons/header/search.svg') no-repeat 22px center / 24px 24px;
+        color: $color-black;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        outline: none;
+
+        &::placeholder {
+            color: $color-gray;
+        }
+
+        &:focus {
+            background-color: $color-line;
+        }
+    }
+}
