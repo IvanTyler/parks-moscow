@@ -1,11 +1,11 @@
 @use '../../styles/variables' as *;
 
 // Блок: interesting — «В центре внимания».
-// Ряд карточек шире экрана — всё, что за краем, срезает overflow секции.
-// Нижний отступ больше верхнего: туда опускаются повёрнутые чётные карточки
+// Ряд карточек шире экрана — всё, что за краем, срезает overflow контейнера:
+// его padding box совпадает с рамкой макета 1920, поэтому карточки уходят
+// за правый край экрана, а не обрываются по сетке 1680
 .interesting {
     padding: 120px 0 99px;
-    overflow: hidden;
     background: linear-gradient(to bottom, rgba(225, 234, 232, 0.01) 62%, $color-line);
 }
 
@@ -13,11 +13,16 @@
 // ряд карточек — второй строкой на всю ширину. Порядок меняется только здесь
 .container-interesting {
     display: grid;
+    overflow: hidden;
     grid-template-areas:
         'title text'
         'list  list';
     grid-template-columns: 1fr auto;
     align-items: center;
+    // Клип режет по padding box, поэтому запас под наклон и сдвиг карточек
+    // живёт здесь. У «Ваших увлечений» ровно такой же отрицательный отступ,
+    // так что шаг между секциями не меняется
+    padding-bottom: $clip-room;
     row-gap: 60px;
 
     // На узких экранах — всё в одну колонку
