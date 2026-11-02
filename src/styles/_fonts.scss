@@ -1,1 +1,27 @@
-// Подключение шрифтов из src/assets/fonts
+// Шрифты из макета: PT Root UI (ParaType), начертания 400 / 500 / 700.
+// Файлы лежат в src/assets/fonts и собираются Vite с хешем в имени.
+// font-display: swap — текст виден сразу, подгрузка начертания не блокирует рендер.
+// Подключение одно на весь проект: main.scss → @use 'fonts'
+@font-face {
+    font-family: 'PT Root UI';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/src/assets/fonts/pt-root-ui-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'PT Root UI';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/src/assets/fonts/pt-root-ui-medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'PT Root UI';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/src/assets/fonts/pt-root-ui-bold.woff') format('woff');
+}

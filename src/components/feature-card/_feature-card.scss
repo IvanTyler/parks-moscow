@@ -14,6 +14,12 @@
     color: #fff;
     background-color: var(--card-bg, #{$color-primary});
 
+    &:first-child {
+        h3 {
+            max-width: 480px;
+        }
+    }
+
     // Крупный узор из букв на фоне. Положение и прозрачность задаёт блок, где лежит карточка
     &::before {
         content: '';

@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Парки Москвы</title>
+    <title>Парки Москвы — афиша, новости и идеи для прогулок</title>
+    <meta name="description" content="Парки Москвы: афиша событий, новости, онлайн-журнал, карта парков и идеи для прогулок. Проект АНО «Развитие парков»." />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/icons/favicon.svg" />
+
+    {{!-- Соцсети. og:image пока не задан: нужна обложка 1200 × 630, без неё
+         превью не покажется — см. NOTES.md, пункт 2 --}}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Парки Москвы" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Парки Москвы — афиша, новости и идеи для прогулок" />
+    <meta property="og:description" content="Афиша событий, новости, онлайн-журнал и карта парков Москвы." />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     {{> header}}
